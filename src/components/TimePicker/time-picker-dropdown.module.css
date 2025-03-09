@@ -1,0 +1,13 @@
+.dropdown::-webkit-scrollbar {
+  height: 12px;
+  width: 4px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0768);
+  border-radius: 100px;
+}

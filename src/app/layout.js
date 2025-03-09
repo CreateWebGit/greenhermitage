@@ -1,14 +1,38 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Inter, Forum, Caveat } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import "@uploadthing/react/styles.css";
 import "./globals.css";
+import "./ea-grid.css";
+import { AuthProvider } from "./Providers";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "./api/uploadthing/core";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const forum = Forum({
   subsets: ["latin"],
+  weight: "400",
+  //display: "swap",
+  //👇 Add variable to our object
+  variable: "--font-forum",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: "400",
+  //display: "swap",
+  //👇 Add variable to our object
+  variable: "--font-caveat",
+});
+
+const MightyRiver = localFont({
+  src: "./../../public/fonts/Mighty-River.ttf",
+  variable: "--font-mighty-river",
 });
 
 export const metadata = {
@@ -19,10 +43,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+      </head>
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${forum.variable} ${GeistSans.variable} ${caveat.variable} ${inter.variable}`}
       >
-        {children}
+        <AuthProvider>
+          <NextSSRPlugin
+            /**
+             * The `extractRouterConfig` will extract **only** the route configs
+             * from the router to prevent additional information from being
+             * leaked to the client. The data passed to the client is the same
+             * as if you were to fetch `/api/uploadthing` directly.
+             */
+            routerConfig={extractRouterConfig(ourFileRouter)}
+          />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

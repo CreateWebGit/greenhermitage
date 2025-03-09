@@ -1,0 +1,19 @@
+.container {
+  margin: -75px auto 20px;
+  padding: 4px;
+  width: 1000px;
+  height: 250px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+  z-index: 9999;
+  @media (max-width: 786px) {
+    margin: -75px auto 20px;
+    height: 400px;
+    width: 90%;
+  }
+}

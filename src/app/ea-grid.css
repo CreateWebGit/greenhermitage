@@ -1,0 +1,335 @@
+/*
+    emils fett coola grid system™ 2022
+        12 kolumner för närvarande, skulle kunna utökas med scss och göra kolumnantal till variabel
+        och sedan ha for-loopar som genererar klasserna under sett till antal kolumner
+    
+    SPAN KOLUMNER:
+        "ea-col" hänvisar till kolumner, "ea-col-xs" overridas i mobil
+
+    HÅRDA KOLUMNER
+        "ea-col-cs" (ea col column-start) hänvisar till vart kolumnen ska starta
+        "ea-col-ce" (ea col column-end) hänvisar till vart kolumnen ska sluta
+*/
+
+.ea-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  row-gap: 4rem;
+}
+
+@media (max-width: 768px) {
+  .ea-col-xs-1 {
+    grid-column: span 1;
+  }
+
+  .ea-col-xs-2 {
+    grid-column: span 2;
+  }
+
+  .ea-col-xs-3 {
+    grid-column: span 3;
+  }
+
+  .ea-col-xs-4 {
+    grid-column: span 4;
+  }
+
+  .ea-col-xs-5 {
+    grid-column: span 5;
+  }
+
+  .ea-col-xs-6 {
+    grid-column: span 5;
+  }
+
+  .ea-col-xs-7 {
+    grid-column: span 7;
+  }
+
+  .ea-col-xs-8 {
+    grid-column: span 8;
+  }
+
+  .ea-col-xs-9 {
+    grid-column: span 9;
+  }
+
+  .ea-col-xs-10 {
+    grid-column: span 10;
+  }
+
+  .ea-col-xs-11 {
+    grid-column: span 11;
+  }
+
+  .ea-col-xs-12 {
+    grid-column: span 12;
+  }
+
+  .ea-col-auto {
+    grid-column: auto;
+  }
+
+  .ea-cs-xs-1 {
+    grid-column-start: 1;
+  }
+
+  .ea-cs-xs-2 {
+    grid-column-start: 2;
+  }
+
+  .ea-cs-xs-3 {
+    grid-column-start: 3;
+  }
+
+  .ea-cs-xs-4 {
+    grid-column-start: 4;
+  }
+
+  .ea-cs-xs-5 {
+    grid-column-start: 5;
+  }
+
+  .ea-cs-xs-6 {
+    grid-column-start: 6;
+  }
+
+  .ea-cs-xs-7 {
+    grid-column-start: 7;
+  }
+
+  .ea-cs-xs-8 {
+    grid-column-start: 8;
+  }
+
+  .ea-cs-xs-9 {
+    grid-column-start: 9;
+  }
+
+  .ea-cs-xs-10 {
+    grid-column-start: 10;
+  }
+
+  .ea-cs-xs-11 {
+    grid-column-start: 11;
+  }
+
+  .ea-cs-xs-12 {
+    grid-column-start: 12;
+  }
+
+  .ea-cs-xs-13 {
+    grid-column-start: 13;
+  }
+
+  .ea-ce-xs-1 {
+    grid-column-end: 1;
+  }
+
+  .ea-ce-xs-2 {
+    grid-column-end: 2;
+  }
+
+  .ea-ce-xs-3 {
+    grid-column-end: 3;
+  }
+
+  .ea-ce-xs-4 {
+    grid-column-end: 4;
+  }
+
+  .ea-ce-xs-5 {
+    grid-column-end: 5;
+  }
+
+  .ea-ce-xs-6 {
+    grid-column-end: 6;
+  }
+
+  .ea-ce-xs-7 {
+    grid-column-end: 7;
+  }
+
+  .ea-ce-xs-8 {
+    grid-column-end: 8;
+  }
+
+  .ea-ce-xs-9 {
+    grid-column-end: 9;
+  }
+
+  .ea-ce-xs-10 {
+    grid-column-end: 10;
+  }
+
+  .ea-ce-xs-11 {
+    grid-column-end: 11;
+  }
+
+  .ea-ce-xs-12 {
+    grid-column-end: 12;
+  }
+
+  .ea-ce-xs-13 {
+    grid-column-end: 13;
+  }
+}
+
+@media (min-width: 768px) {
+  .ea-col-1 {
+    grid-column: span 1;
+  }
+
+  .ea-col-2 {
+    grid-column: span 2;
+  }
+
+  .ea-col-3 {
+    grid-column: span 3;
+  }
+
+  .ea-col-4 {
+    grid-column: span 4;
+  }
+
+  .ea-col-5 {
+    grid-column: span 5;
+  }
+
+  .ea-col-6 {
+    grid-column: span 6;
+  }
+
+  .ea-col-7 {
+    grid-column: span 7;
+  }
+
+  .ea-col-8 {
+    grid-column: span 8;
+  }
+
+  .ea-col-9 {
+    grid-column: span 9;
+  }
+
+  .ea-col-10 {
+    grid-column: span 10;
+  }
+
+  .ea-col-11 {
+    grid-column: span 11;
+  }
+
+  .ea-col-12 {
+    grid-column: span 12;
+  }
+
+  .ea-col-auto {
+    grid-column: auto;
+  }
+
+  .ea-cs-1 {
+    grid-column-start: 1;
+  }
+
+  .ea-cs-2 {
+    grid-column-start: 2;
+  }
+
+  .ea-cs-3 {
+    grid-column-start: 3;
+  }
+
+  .ea-cs-4 {
+    grid-column-start: 4;
+  }
+
+  .ea-cs-5 {
+    grid-column-start: 5;
+  }
+
+  .ea-cs-6 {
+    grid-column-start: 6;
+  }
+
+  .ea-cs-7 {
+    grid-column-start: 7;
+  }
+
+  .ea-cs-8 {
+    grid-column-start: 8;
+  }
+
+  .ea-cs-9 {
+    grid-column-start: 9;
+  }
+
+  .ea-cs-10 {
+    grid-column-start: 10;
+  }
+
+  .ea-cs-11 {
+    grid-column-start: 11;
+  }
+
+  .ea-cs-12 {
+    grid-column-start: 12;
+  }
+
+  .ea-cs-13 {
+    grid-column-start: 13;
+  }
+
+  .ea-ce-1 {
+    grid-column-end: 1;
+  }
+
+  .ea-ce-2 {
+    grid-column-end: 2;
+  }
+
+  .ea-ce-3 {
+    grid-column-end: 3;
+  }
+
+  .ea-ce-4 {
+    grid-column-end: 4;
+  }
+
+  .ea-ce-5 {
+    grid-column-end: 5;
+  }
+
+  .ea-ce-6 {
+    grid-column-end: 6;
+  }
+
+  .ea-ce-7 {
+    grid-column-end: 7;
+  }
+
+  .ea-ce-8 {
+    grid-column-end: 8;
+  }
+
+  .ea-ce-9 {
+    grid-column-end: 9;
+  }
+
+  .ea-ce-10 {
+    grid-column-end: 10;
+  }
+
+  .ea-ce-11 {
+    grid-column-end: 11;
+  }
+
+  .ea-ce-12 {
+    grid-column-end: 12;
+  }
+
+  .ea-ce-13 {
+    grid-column-end: 13;
+  }
+}

@@ -2,20 +2,234 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html,
+body {
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+
+  @media (min-width: 1920px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 1464px) {
+    font-size: 1.09vw;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+section {
+  max-width: 1500px;
+  padding-left: 8rem;
+  padding-right: 8rem;
+
+  @media (max-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.allergiesContainer [type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color: #333;
+  line-height: 25px;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-right: 8px;
+  position: relative;
+  z-index: 999;
+  border: 1px solid #333;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  outline: 2px solid #aaa;
+  background: #fff;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  margin-left: -2px;
+  top: -5px;
+  width: 0;
+  height: 3px;
+  background-color: #f00;
+  transform: translate(8px, 13px) rotate(-45deg);
+  transform-origin: left;
+  transition: 150ms all linear;
+  transition-delay: 0ms;
+}
+
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  margin-left: -2px;
+  top: -5px;
+  width: 0;
+  height: 3px;
+  background-color: #f00;
+  transform: translate(1px, 8px) rotate(45deg);
+  transform-origin: left;
+  transition: 150ms all linear;
+  transition-delay: 150ms;
+}
+
+input[type="checkbox"]:checked::before {
+  width: 24px;
+  transition-delay: 150ms;
+}
+
+input[type="checkbox"]:checked::after {
+  width: 10px;
+  transition-delay: 0ms;
+}
+
+.hero {
+  position: relative;
+  background-image: url(/home/heroIMG1.png);
+  background-size: cover;
+  background-position: 0% 30%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  @media (max-width: 768px) {
+    height: 70vh;
+  }
+}
+
+/*
+.allergiesContainer [type="checkbox"] {
+  opacity: 0;
+}
+
+.allergiesContainer [type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color: #333;
+  line-height: 25px;
+}
+
+.allergiesContainer [type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #aaa;
+  background: #fff;
+}
+
+.allergiesContainer [type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #33bc4a;
+  background: #fff;
+}
+
+.allergiesContainer [type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #33bc4a;
+  background: #fff;
+}
+  */
+
+.uploadDropzoneContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.custom-button {
+  font-size: 1.6rem;
+  width: 350px !important;
+  color: rgb(0 0 0 / 1) !important;
+  background-color: rgb(239 68 68 / 1) !important;
+}
+
+.custom-button-ready {
+  background-color: aqua;
+}
+
+.default {
+  transition: max-height 0.8s;
+}
+
+.open {
+  max-height: 1000px;
+}
+
+.close {
+  max-height: 1px;
+  height: 1px;
+}
+
+@layer base {
+  :root {
+    --color-background: 242 238 227;
+    --color-form: 235 231 220;
+
+    /* Review */
+    --color-comment-text: 95 105 82;
+  }
+}
+
+.swipe-list {
+  position: relative;
+  border: 1px solid #ddd;
+}
+
+.box-action {
+  position: absolute;
+  right: 0;
+}
+
+.item-group {
+  overflow: hidden;
+  background: #ccc;
+}
+
+.item {
+  background: #fff;
+
+  border: 1px solid #999;
+  position: relative;
+  z-index: 2;
+  transition: all 0.1s linear;
 }

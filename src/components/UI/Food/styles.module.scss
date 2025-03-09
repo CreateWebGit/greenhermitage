@@ -1,0 +1,62 @@
+.foodSection {
+  margin: 150px 0 20px;
+}
+
+.headerText {
+  span {
+    color: #de803d;
+    font-family: var(--font-inter);
+  }
+
+  h2 {
+    font-family: var(--font-caveat);
+    font-size: 90px;
+    color: #5f6952;
+    line-height: 80px;
+  }
+}
+
+.foodContainer {
+  position: relative;
+
+  .foodTextWrapper {
+    p {
+      font-family: var(--font-inter);
+      color: #3d4338;
+      margin-top: 30px;
+    }
+    @media (max-width: 768px) {
+      order: 1;
+    }
+  }
+
+  .foodImageWrapper {
+    margin-top: -100px;
+
+    img {
+      width: 360px;
+      height: auto;
+
+      @media (max-width: 768px) {
+        margin: auto;
+      }
+    }
+    @media (max-width: 768px) {
+      order: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.greenImage {
+  background-image: url("/home/plantage.jpeg");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 360px;
+  margin-top: 30px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

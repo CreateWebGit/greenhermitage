@@ -1,0 +1,36 @@
+.reviewTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    order: 1;
+  }
+}
+
+.reviewImagesContainer {
+  @media (max-with: 768px) {
+    order: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.image1 {
+  width: 14.9375rem;
+  height: 12.9375rem;
+}
+
+.image2 {
+  width: 15.125rem;
+  height: 19.375rem;
+}
+
+.image3 {
+  width: 19.9375rem;
+  height: 25.625rem;
+}
+
+.image4 {
+  width: 14.9375rem;
+  height: 10rem;
+}
