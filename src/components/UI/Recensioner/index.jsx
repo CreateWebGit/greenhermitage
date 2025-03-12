@@ -1,7 +1,15 @@
+"use client";
 import React from "react";
 import styles from "./styles.module.scss";
-import SlideShow from "../../SlideShow1";
+import SlideShow from "../../SlideShow2";
 import Button from "../../Button";
+import EmblaCarousel from "@/components/Slide";
+import { motion, useInView } from "framer-motion";
+import CircularScrollMotion from "@/components/CircularScrollMotion";
+
+const OPTIONS = { loop: true };
+const SLIDE_COUNT = 5;
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const Recensioner = ({ reviewHighLightData }) => {
   return (
@@ -17,10 +25,10 @@ const Recensioner = ({ reviewHighLightData }) => {
           <div
             className={[
               styles.reviewTextContainer,
-              "ea-col-6 ea-col-xs-12 w-full",
+              "ea-col-6 ea-col-xs-12 ",
             ].join(" ")}
           >
-            <SlideShow reviewHighLightData={reviewHighLightData} />
+            <EmblaCarousel slides={reviewHighLightData} options={OPTIONS} />
           </div>
           <div
             className={[
@@ -29,24 +37,40 @@ const Recensioner = ({ reviewHighLightData }) => {
             ].join(" ")}
           >
             <div className="flex items-end gap-4">
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: -50, x: -50, scale: 0.5 }}
+                whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-300px 0px -300px 0px" }}
+                transition={{ duration: 1 }}
                 className={styles.image1}
                 src="/home/group/Rectangle1.png"
                 alt=""
               />
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: -50, x: 50, scale: 0.5 }}
+                whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-300px 0px -300px 0px" }}
+                transition={{ duration: 1 }}
                 className={styles.image2}
                 src="/home/group/Rectangle2.png"
                 alt=""
               />
             </div>
             <div className="flex items-start gap-4 mt-4">
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: 50, x: -50, scale: 0.5 }}
+                whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+                viewport={{ once: true, margin: "0px 0px 100px 0px" }}
+                transition={{ duration: 1 }}
                 className={styles.image3}
                 src="/home/group/Rectangle3.png"
                 alt=""
               />
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: 50, x: 50, scale: 0.5 }}
+                whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+                viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+                transition={{ duration: 1 }}
                 className={styles.image4}
                 src="/home/group/Rectangle4.png"
                 alt=""

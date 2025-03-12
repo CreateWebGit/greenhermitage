@@ -8,11 +8,12 @@ export default async function Home() {
 
   return (
     <div className="w-full min-h-full bg-[#F2EEE3]">
-      <Navbar white={true} />
+      <Navbar />
       <section
-        className="bg-[url('/menu/header.png')] w-full h-[500px] bg-cover flex items-center justify-center"
+        className="bg-[url('/menu/header.png')] w-full h-[500px] bg-cover flex items-center justify-center relative"
         style={{ backgroundPosition: "top 0px right 0px" }}
       >
+        <div className=" absolute top-0 bottom-0 right-0 left-0 bg-black/50" />
         <h1 className=" font-Caveat text-center z-50 text-[#EFE7D2] text-[128px]">
           Boka bord
         </h1>

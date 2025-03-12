@@ -3,6 +3,9 @@ import Recensioner from "@/components/UI/Recensioner";
 import Food from "@/components/UI/Food";
 import { fetchHighlightReviews } from "@/lib/actions/review.actions";
 import MapComponent from "@/components/GoogleMap";
+import { motion } from "framer-motion";
+import AnimateText from "@/components/UI/AnimateText";
+import { Logo } from "@/components/Navbar/Logo";
 
 const Page = async () => {
   const reviewHighLightData = await fetchHighlightReviews();
@@ -10,19 +13,21 @@ const Page = async () => {
   return (
     <div className=" bg-[#F2EEE3]">
       <Navbar />
-      <header className="hero z-40">
-        <div className=" w-full h-full bg-black/50 flex flex-col justify-center items-center text-white">
+      <header className="hero z-40 relative">
+        <div className=" w-full h-full bg-black/50 flex flex-col justify-center items-center text-white z-50">
           <div className=" w-[700px] text-center">
-            <div className="flex justify-center items-center w-full">
+            <div className="flex justify-center items-center w-full z-50">
               <img className=" mr-[-8px]" src="/home/Ellipse1.png" alt="" />
               <img className=" mr-[-8px]" src="/home/Ellipse2.png" alt="" />
               <img className=" mr-[-8px]" src="/home/Ellipse3.png" alt="" />
               <div className="w-[48px] h-[48px] bg-black rounded-full flex justify-center items-center">
                 <img src="/home/Arrow1.png" alt="" />
               </div>
-              <p>Över 100+ nöjda vegetarianer!</p>
+              <p className=" z-50">Över 100+ nöjda vegetarianer!</p>
             </div>
-            <h1 className=" font-forum text-7xl md:text-9xl">HERMITAGE</h1>
+            <div className=" my-8 flex justify-center z-50">
+              <Logo />
+            </div>
             <h2 className=" font-forum text-xl tracking-[.5em] md:text-2xl">
               VEGETARISKA RESTAURANG
             </h2>
@@ -34,15 +39,8 @@ const Page = async () => {
             </p>
           </div>
         </div>
-        <div className=" flex items-center justify-center mt-[-100px] w-[90%] h-[200px] m-auto z-50 bg-[#F2EEE4] rounded-md border shadow-md md:w-[600px]">
-          <p className="w-[350px] text-center">
-            Vi jobbar ständigt med att förbättra den planet vi lever på och
-            jobbar i miljöns tecken. Därför är upp till{" "}
-            <span className="text-[#DE803D]">
-              50% av våra rätter ekologiska.
-            </span>
-          </p>
-        </div>
+        <AnimateText />
+        <div className=" absolute top-0 bottom-0 left-0 right-0 bg-black/50 z-[-1] " />
       </header>
 
       <Food />

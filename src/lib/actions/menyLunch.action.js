@@ -79,11 +79,11 @@ export async function setOpen(start, end) {
   }
 }
 
-export async function getTitle() {
+export async function getAllLuch() {
   try {
-    const featchTitle = await MenuLunch.find().lean();
+    const featchAllLunch = await MenuLunch.find().lean();
 
-    return JSON.parse(JSON.stringify(featchTitle[0]));
+    return JSON.parse(JSON.stringify(featchAllLunch[0]));
   } catch (error) {
     console.log("my error", error);
   }

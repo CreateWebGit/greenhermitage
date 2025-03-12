@@ -10,7 +10,7 @@ export default async function Home() {
       <div className=" bg-siteBackground ">
         <Navbar />
         <section
-          className="bg-[url('/book/header.jpeg')] w-full h-[400px] bg-cover flex items-center justify-center"
+          className="bg-[url('/book/header.jpeg')] w-full h-[500px] bg-cover flex items-center justify-center"
           style={{ backgroundPosition: "bottom -1150px right 0px" }}
         >
           <h1 className=" font-Caveat text-center z-50 text-[#EFE7D2] text-[128px]">

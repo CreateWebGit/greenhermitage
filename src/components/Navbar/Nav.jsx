@@ -93,7 +93,9 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
       <div
         className={cn(
           "w-full px-4  top-0 z-50 border-b  absolute py-8",
-          white ? "border-b-black/10" : "border-b-white/30 md:border-none"
+          white
+            ? "border-b-black/10 bg-slate-400/60"
+            : "border-b-white/30 md:border-none"
         )}
       >
         <Topbar
@@ -104,7 +106,7 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
 
         <div className="flex justify-between items-center m-auto h-6 md:h-12 lg:w-[1200px] ">
           <Link href={"/"} className="relative ">
-            <Logo />
+            <h1 className=" text-white text-[40px]"> HERMITAGE </h1>
           </Link>
           <div className="flex items-center w-full justify-end md:justify-center ">
             <div className="flex relative justify-between items-center z-50 mr-8 cursor-pointer md:hidden">

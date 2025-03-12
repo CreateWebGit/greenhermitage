@@ -1,10 +1,26 @@
+"use client";
 import React from "react";
 import styles from "./styles.module.scss";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Food = () => {
+  const ref = useRef(null);
+
+  // Get scroll progress inside the ref container
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], // Track visibility in viewport
+  });
+
+  // Define circular motion path
+  const x = useTransform(scrollYProgress, [0, 1], [0, 0]); // Move on X-axis
+  const y = useTransform(scrollYProgress, [0, 1], [0, 0]); // Move on Y-axis
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 90]); // Rotate
+
   return (
     <section className={styles.foodSection}>
-      <div className={styles.headerText}>
+      <div ref={ref} className={styles.headerText}>
         <span>MATEN</span>
         <h2>
           Vår passion för växtbaserad <br />
@@ -30,7 +46,7 @@ const Food = () => {
             " "
           )}
         >
-          <img src="/home/vegmeal.png" alt="" />
+          <motion.img style={{ x, y, rotate }} src="/home/vegmeal.png" alt="" />
         </div>
       </div>
 
