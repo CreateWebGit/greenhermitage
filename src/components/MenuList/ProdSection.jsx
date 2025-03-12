@@ -19,6 +19,8 @@ import Popup from "../Popup";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+export const dynamic = "force-dynamic";
+
 const ProdSection = ({
   product,
   formField,

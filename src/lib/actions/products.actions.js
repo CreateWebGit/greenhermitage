@@ -2,7 +2,6 @@
 import Products from "@/models/products.model";
 import { connectMongoDB } from "../mymongodb";
 
-export const dynamic = "force-dynamic";
 export async function createProduct(data) {
   console.log(data);
 
