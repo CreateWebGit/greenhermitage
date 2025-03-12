@@ -124,7 +124,7 @@ const MenuList = ({ data, dataPublished }) => {
       }
     } catch (error) {
       console.log("haha");
-    
+  }
     */
   };
 
