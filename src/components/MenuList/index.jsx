@@ -11,6 +11,7 @@ import {
   fetchMenuPublished,
   updateMenuPublished,
 } from "@/lib/actions/menuPublished.action";
+import { createProduct } from "@/lib/actions/products.actions";
 
 const MenuList = ({ data, dataPublished }) => {
   const productsData = data[0].products;
@@ -98,6 +99,9 @@ const MenuList = ({ data, dataPublished }) => {
     console.log(_formField);
     setFormField(_formField);
 
+    createProduct(_formField);
+
+    /*
     try {
       if (formField !== undefined) {
         const res = await fetch("/api/profile", {
@@ -121,6 +125,7 @@ const MenuList = ({ data, dataPublished }) => {
     } catch (error) {
       console.log("haha");
     }
+    */
   };
 
   const handleDropdownProducts = (CatId, prodId) => {
