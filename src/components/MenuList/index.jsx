@@ -11,6 +11,7 @@ import {
   fetchMenuPublished,
   updateMenuPublished,
 } from "@/lib/actions/menuPublished.action";
+import { createProduct } from "@/lib/actions/products.actions";
 
 const MenuList = ({ data, dataPublished }) => {
   const productsData = data[0].products;
@@ -100,6 +101,8 @@ const MenuList = ({ data, dataPublished }) => {
 
     try {
       if (formField !== undefined) {
+        createProduct(_formField);
+        /*
         const res = await fetch("/api/profile", {
           method: "PUT",
           headers: {
@@ -117,6 +120,7 @@ const MenuList = ({ data, dataPublished }) => {
         } else {
           console.log("not ok");
         }
+        */
       }
     } catch (error) {
       console.log("haha");
