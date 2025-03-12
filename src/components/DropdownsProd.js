@@ -75,7 +75,7 @@ const DropdownProd = ({
                   // onTouchStart={(e) => onTouchStart(e)}
                   onTouchMove={(e) => onTouchMove(e)}
                   // onDragStart={(e) => onDragStart(e)}
-                  onDragOver={(e) => onDragMove(e)}
+                  // onDragOver={(e) => onDragMove(e)}
                 >
                   <div
                     onTouchStart={(e) => e.stopPropagation()}
