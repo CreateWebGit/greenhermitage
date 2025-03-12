@@ -11,7 +11,6 @@ import {
   fetchMenuPublished,
   updateMenuPublished,
 } from "@/lib/actions/menuPublished.action";
-import { createProduct } from "@/lib/actions/products.actions";
 
 const MenuList = ({ data, dataPublished }) => {
   const productsData = data[0].products;
