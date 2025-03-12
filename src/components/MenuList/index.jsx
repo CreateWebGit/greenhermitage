@@ -99,7 +99,7 @@ const MenuList = ({ data, dataPublished }) => {
     console.log(_formField);
     setFormField(_formField);
 
-    createProduct(_formField);
+    // createProduct(_formField);
 
     /*
     try {
