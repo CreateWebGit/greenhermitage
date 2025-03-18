@@ -2,6 +2,7 @@ import { checkIsNumber, padNumberToString } from "@/utils/timeConverter";
 import { Clock4 } from "lucide-react";
 import React, { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
+import { Popover, PopoverContent, PopoverTrigger } from "../DatePicker/popover";
 
 const TimePickerInput = ({ isOpen, setIsOpen, timeValues, setTimeValues }) => {
   let inputHoursRef = useRef(null);
@@ -73,49 +74,52 @@ const TimePickerInput = ({ isOpen, setIsOpen, timeValues, setTimeValues }) => {
   console.log(timeValues.hour);
 
   const inputClass =
-    "text-[#9CA3B0] text-xs text-center bg-transparent outline-none h-7 w-8 cursor-pointer hover:bg-white/10 rounded-md";
+    "text-[#9CA3B0] select-none text-xs text-center bg-transparent outline-none h-7 w-8 cursor-pointer hover:bg-white/10 rounded-md";
 
   return (
-    <div
-      className={twMerge(
-        "z-40 py-2 px-4 w-[120px] cursor-pointer text-[#9CA3B0] text-xs font-semibold bg-colorForm  border border-colorForm hover:border-[#5F6952] rounded-md h-9 flex items-center transition-all",
-        isOpen && "ring-1 ring-white/40 border border-white/40"
-      )}
-      onClick={() => {
-        setIsOpen(true);
-      }}
-    >
+    <PopoverTrigger asChild>
       <div
         className={twMerge(
-          "w-full flex justify-between items-center",
-          isNotEmpty() && "hidden"
+          "z-40  px-4 w-full cursor-pointer text-[#9CA3B0] text-xs font-semibold bg-colorForm  border border-colorForm hover:border-[#5F6952] rounded-md h-[50px] flex items-center justify-start transition-all",
+          isOpen && ""
         )}
+        onClick={() => {
+          setIsOpen(true);
+        }}
       >
-        <p className="text-xl font-Inter font-light text-[#9CA3B0] ">Tid</p>
-        <Clock4 strokeWidth={0.5} color="#5F6952" />
-      </div>
+        <div
+          className={twMerge(
+            "w-full flex justify-start gap-3 items-center",
+            isNotEmpty() && "hidden"
+          )}
+        >
+          <p className=" font-Inter  text-[#9CA3B0] ">Tid</p>
+          <Clock4 className="mr-2 h-4 w-4" color="#9CA3B0" />
+        </div>
 
-      <div
-        className={twMerge(
-          "flex items-center  text-[#9CA3B0]",
-          !isNotEmpty() && "hidden"
-        )}
-      >
-        <input
-          ref={inputHoursRef}
-          className={inputClass}
-          value={padNumberToString(timeValues.hour)}
-          onInput={hanleOnInputHours}
-        />
-        <p>:</p>
-        <input
-          ref={inputMinutesRef}
-          className={inputClass}
-          value={padNumberToString(timeValues.minutes)}
-          onInput={hanleOnInputMinutes}
-        />
-        <Clock4 strokeWidth={0.5} />
-        {/*
+        <div
+          className={twMerge(
+            "flex items-center  text-[#9CA3B0]",
+            !isNotEmpty() && "hidden"
+          )}
+        >
+          <input
+            ref={inputHoursRef}
+            className={inputClass}
+            value={padNumberToString(timeValues.hour)}
+            onInput={hanleOnInputHours}
+            inputMode="none"
+          />
+          <p>:</p>
+          <input
+            ref={inputMinutesRef}
+            className={inputClass}
+            value={padNumberToString(timeValues.minutes)}
+            onInput={hanleOnInputMinutes}
+            inputMode="none"
+          />
+          <Clock4 strokeWidth={0.5} />
+          {/*
         <p>:</p>
         <input
           ref={inputSecoundsRef}
@@ -124,8 +128,9 @@ const TimePickerInput = ({ isOpen, setIsOpen, timeValues, setTimeValues }) => {
           onInput={hanleOnInputSecounds}
       />
       */}
+        </div>
       </div>
-    </div>
+    </PopoverTrigger>
   );
 };
 

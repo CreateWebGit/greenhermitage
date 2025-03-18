@@ -50,7 +50,7 @@ const Input = ({
                   value={value}
                   placeholder={placeholder}
                   onChange={onChange}
-                  className="h-16 w-full rounded-sm border pl-2 pt-4 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
+                  className="h-[200px] w-full rounded-sm border pl-2 pt-4 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
                 />
               ) : (
                 <div className="h-16 w-full border-b  pl-2 pt-4 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700">

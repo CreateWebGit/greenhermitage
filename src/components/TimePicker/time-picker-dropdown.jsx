@@ -35,9 +35,9 @@ const TimePickerDropdown = ({
   return (
     <div
       className={twMerge(
-        "text-[#5F6952] border mt-[-250px] absolute flex flex-col shadow-md bg-slate-100 rounded-lg  mx-auto h-fit w-64 items-center transition-all z-50 -translate-x-1/2 left-1/2",
+        "text-[#5F6952] border  flex flex-col shadow-md bg-slate-100 rounded-lg  mx-auto h-fit w-[250]  items-center transition-all z-50  ",
         isOpen
-          ? "max-h-96 border border-white/10 translate-y-0 opacity-100 duration-300 scale-100"
+          ? "max-h-96 border border-white/10 translate-y-0 opacity-100 duration-300 "
           : "max-h-0 border-transparent border-none translate-y-6 opacity-0 scale-75 overflow-hidden"
       )}
     >

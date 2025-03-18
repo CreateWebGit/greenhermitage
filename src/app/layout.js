@@ -8,6 +8,9 @@ import { AuthProvider } from "./Providers";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Toaster } from "sonner";
+
+export const dynamic = "force-dynamic";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,6 +65,7 @@ export default function RootLayout({ children }) {
             routerConfig={extractRouterConfig(ourFileRouter)}
           />
           {children}
+          <Toaster />
         </AuthProvider>
       </body>
     </html>

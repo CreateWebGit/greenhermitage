@@ -13,12 +13,12 @@ const page = async () => {
         className="bg-[url('/recentioner/header.jpeg')] w-full h-[500px] bg-cover flex items-center justify-center"
         style={{ backgroundPosition: "bottom -1350px right 0px" }}
       >
-        <h1 className=" font-Caveat text-center z-50 text-[#EFE7D2] text-[128px]">
-          Boka bord
+        <h1 className=" font-Caveat text-center z-50 text-[#EFE7D2] text-[128px] ">
+          Hur var upplevelsen?
         </h1>
       </section>
 
-      <div className="py-12">
+      <div className="">
         <Review reviews={reviews} />
       </div>
     </div>

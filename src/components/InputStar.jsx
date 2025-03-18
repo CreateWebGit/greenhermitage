@@ -29,11 +29,11 @@ const InputStar = ({
         <div className="flex bg-white">
           <div
             className={cn(
-              "top-0 flex h-12 w-12 items-center justify-center rounded-bl-md rounded-tl-md border-y border-l",
+              "top-0 flex h-12 w-12 items-center justify-center ",
               isColor ? isColor : "text-red-400"
             )}
           >
-            <span>
+            <span className=" text-2xl">
               <PiShootingStarFill />
             </span>
           </div>
@@ -41,12 +41,12 @@ const InputStar = ({
           <div
             onMouseEnter={() => setColor("text-red-500")}
             onMouseLeave={() => setColor("text-[#333]")}
-            className=" w-[270px] bg-white rounded-sm border py-2 pl-2 text-[#9CA3B0] outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
+            className=" w-full bg-white  py-2 pl-2 text-[#9CA3B0] outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
           >
-            <p className="text-[#9CA3B0] outline-transparent">
+            <p className="text-[#959caa] outline-transparent">
               Betygsätt din upplevelse:
             </p>
-            <div className=" h-1 w-[70%] border-t" />
+            <div className=" h-[1.2px]  bg-[#6c717b] w-[80%]" />
             <StarRating isRating={isRating} setRating={setRating} />
           </div>
         </div>

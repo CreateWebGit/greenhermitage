@@ -14,29 +14,34 @@ const Page = async () => {
     <div className=" bg-[#F2EEE3]">
       <Navbar />
       <header className="hero z-40 relative">
-        <div className=" w-full h-full bg-black/50 flex flex-col justify-center items-center text-white z-50">
+        <div className=" w-full h-full bg-black/50 flex flex-col  items-center text-white z-50">
           <div className=" w-[700px] text-center">
-            <div className="flex justify-center items-center w-full z-50">
-              <img className=" mr-[-8px]" src="/home/Ellipse1.png" alt="" />
-              <img className=" mr-[-8px]" src="/home/Ellipse2.png" alt="" />
-              <img className=" mr-[-8px]" src="/home/Ellipse3.png" alt="" />
-              <div className="w-[48px] h-[48px] bg-black rounded-full flex justify-center items-center">
-                <img src="/home/Arrow1.png" alt="" />
-              </div>
-              <p className=" z-50">Över 100+ nöjda vegetarianer!</p>
-            </div>
-            <div className=" my-8 flex justify-center z-50">
+            <div className=" mt-[100px] flex justify-center z-50">
               <Logo />
             </div>
-            <h2 className=" font-forum text-xl tracking-[.5em] md:text-2xl">
+
+            <h2 className=" font-forum text-xl tracking-[.5em] md:text-2xl mt-[50px]">
               VEGETARISKA RESTAURANG
             </h2>
-            ger gå. Känner du att det kurrar i magen? Styr då din kosa hit och
+
             <p className=" font-giestsans">
               Vi erbjuder vegetarisk mat lagad med kärlek i en trevlig miljö i
               Gamla Stan i Stockholm. Till oss ska den med hun njut av vår
               vegetariska buffé.
             </p>
+            <div className="flex flex-col justify-center items-center w-full z-50 mt-[30px]">
+              <div className="flex justify-center items-center w-full z-50">
+                <div className="w-[48px] h-[48px] bg-black rounded-full flex justify-center items-center">
+                  <img src="/home/Arrow1.png" alt="" />
+                </div>
+                <p className=" z-50">Över 100+ nöjda vegetarianer!</p>
+              </div>
+              <img
+                className=" mt-[-22px] ml-[38px]"
+                src="/home/ReviewGoogle.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
         <AnimateText />
@@ -51,7 +56,7 @@ const Page = async () => {
             <span className="text-[#de803d;]">KURRAR DET I MAGEN?</span>
             <h2
               style={{ fontFamily: "var(--font-caveat)" }}
-              className="text-[90px] absolute w-[900px] z-50 leading-[0.75]"
+              className="text-[90px] absolute w-[900px] z-50 leading-[0.75] text-colorTitle"
             >
               Till oss ska den med hunger gå.
             </h2>

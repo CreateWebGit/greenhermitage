@@ -1,11 +1,18 @@
 .section {
   background-color: #f2eee3;
   padding-bottom: 20px;
+  @media (max-width: 768px) {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
 
   .container {
     background-color: black;
     border-radius: 10px;
     padding: 20px 20px;
+    @media (max-width: 768px) {
+      border-radius: 0px;
+    }
   }
 
   .header {

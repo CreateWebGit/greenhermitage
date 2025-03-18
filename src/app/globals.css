@@ -204,6 +204,7 @@ input[type="checkbox"]:checked::after {
   :root {
     --color-background: 242 238 227;
     --color-form: 235 231 220;
+    --color-title: 95 105 83;
 
     /* Review */
     --color-comment-text: 95 105 82;

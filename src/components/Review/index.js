@@ -60,6 +60,8 @@ const Review = ({ reviews }) => {
     }
   };
 
+  //#e2d3b4
+
   const convertDateToDate = (theDate) => {
     const date = moment(theDate).format("DD / MM - YYYY");
 
@@ -74,11 +76,11 @@ const Review = ({ reviews }) => {
 
   return (
     <>
-      <div className=" w-[1000px] m-auto flex items-stretch justify-between ">
-        <div>
+      <div className="w-full  m-auto flex items-stretch justify-between ea-grid md:w-[1000px] ">
+        <div className="px-4 order-2 ea-col-6 ea-col-xs-12 md:order-1 md:px-2">
           {isReviewData.map((item, index) => {
             return (
-              <div className="mb-5" key={index}>
+              <div className="mb-12 md:my-12" key={index}>
                 <div>
                   <StarRating
                     isRating={item.rating}
@@ -111,27 +113,43 @@ const Review = ({ reviews }) => {
             );
           })}
         </div>
-        <div className="bg-[#FBFBFB] self-stretch">
-          <div className=" sticky top-4 self-start px-4">
-            <form onSubmit={handleSubmit}>
-              <InputStar isRating={isRating} setRating={setRating} />
-              <Input
-                name="isName"
-                onChange={(e) => setName(e.target.value)}
-                value={isName}
-                placeholder="Namn"
-                Icon={IoIosPerson}
-              />
-              <Input
-                name="comment"
-                onChange={(e) => setComment(e.target.value)}
-                value={isComment}
-                type="textarea"
-                placeholder="Skriv en kommentar.."
-                Icon={MdOutlineRateReview}
-              />
-              <input type="submit" value="Skicka" />
-            </form>
+        <div className=" order-1 w-full m-0  self-stretch ea-col-6 ea-col-xs-12 md:order-2 md:w-[300px] md:ml-[200px] ">
+          <div className=" sticky  top-0 self-end px-4 md:min-h-[100vh] border border-[#F2EEE3] bg-[#F2EEE3] md:bg-[#CDC6B3]  md:shadow-md">
+            <div className="">
+              <form onSubmit={handleSubmit}>
+                <div className=" flex flex-col pt-8 md:py-[50px] gap-6 md:h-[100vh] md:justify-between">
+                  <div className="mb-4 md:mb-12">
+                    <h2 className=" text-2xl text-[#4b4a4a] text-colorComment">
+                      Skriv en recention
+                    </h2>
+                    <div className=" h-[2px] rounded-md bg-[#333] w-1/2 mb-3" />
+                    <InputStar isRating={isRating} setRating={setRating} />
+                  </div>
+                  <div>
+                    <Input
+                      name="isName"
+                      onChange={(e) => setName(e.target.value)}
+                      value={isName}
+                      placeholder="Namn"
+                      Icon={IoIosPerson}
+                    />
+                    <Input
+                      name="comment"
+                      onChange={(e) => setComment(e.target.value)}
+                      value={isComment}
+                      type="textarea"
+                      placeholder="Skriv en kommentar.."
+                      Icon={MdOutlineRateReview}
+                    />
+                    <input
+                      type="submit"
+                      value="Skicka"
+                      className="border border-[#c6c5c5] bg-[#F2EEE3] w-full h-[50px] cursor-pointer"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

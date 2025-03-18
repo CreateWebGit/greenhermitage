@@ -6,7 +6,7 @@ import { fetchHighlightReviews } from "@/lib/actions/review.actions";
 export default async function Home() {
   const reviewHighLightData = await fetchHighlightReviews();
   return (
-    <div className="bg-[#F2EEE3]">
+    <div className="bg-[#F2EEE3] overflow-hidden">
       <div className=" bg-siteBackground ">
         <Navbar />
         <section

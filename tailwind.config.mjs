@@ -9,9 +9,18 @@ export default withUt({
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // 👇 Add CSS variables
+        Caveat: ["var(--font-caveat)"],
+        Inter: ["var(--font-inter)"],
+        forum: ["var(--font-forum)"],
+        giestsans: ["var(--font-geist-sans)"],
+        giestmono: ["var(--font-geist-mono)"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        colorTitle: "rgb(var(--color-title) / <alpha-value>)",
       },
     },
   },

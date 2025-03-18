@@ -14,8 +14,6 @@
 .ea-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
-  row-gap: 4rem;
 }
 
 @media (max-width: 768px) {

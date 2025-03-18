@@ -7,39 +7,41 @@ import React, { useState } from "react";
 import TimePickerInput from "./time-picker-input";
 import TimePickerDropdown from "./time-picker-dropdown";
 import { twMerge } from "tailwind-merge";
+import { Popover, PopoverContent, PopoverTrigger } from "../DatePicker/popover";
 
-const TimePicker = ({ time, setTime }) => {
+const TimePicker = ({ isFormData, setFormData }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [timeValues, setTimeValues] = useState(secoundsToTimeValues(time));
+  const [timeValues, setTimeValues] = useState(
+    secoundsToTimeValues(isFormData.time)
+  );
   console.log(timeValues);
   return (
     <>
-      <div className="relative inline-block">
-        <TimePickerDropdown
-          isOpen={isOpen}
-          timeValues={timeValues}
-          setTimeValues={setTimeValues}
-          onConfirm={() => {
-            setTime(timeValuesToSecounds(timeValues));
-            setIsOpen(false);
-          }}
-        />
-        <TimePickerInput
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          timeValues={timeValues}
-          setTimeValues={setTimeValues}
-        />
+      <div className="">
+        <Popover>
+          <PopoverContent className="w-auto p-0">
+            <TimePickerDropdown
+              isOpen={isOpen}
+              timeValues={timeValues}
+              setTimeValues={setTimeValues}
+              onConfirm={() => {
+                setFormData({
+                  ...isFormData,
+                  time: timeValuesToSecounds(timeValues),
+                });
+                setIsOpen(false);
+              }}
+            />
+          </PopoverContent>
+
+          <TimePickerInput
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            timeValues={timeValues}
+            setTimeValues={setTimeValues}
+          />
+        </Popover>
       </div>
-      <div
-        onClick={() => setIsOpen(false)}
-        className={twMerge(
-          "",
-          !isOpen
-            ? "hidden"
-            : "fixed bottom-0 left-0 right-0 h-[1000px] z-40  overflow-y-auto"
-        )}
-      ></div>
     </>
   );
 };

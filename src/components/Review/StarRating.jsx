@@ -27,7 +27,7 @@ const StarRating = ({
     if (isRating == 1) {
       setRatingText("Dåligt");
     } else if (isRating == 2) {
-      setRatingText("Mindre bra");
+      setRatingText("Sämre");
     } else if (isRating == 3) {
       setRatingText("Ok");
     } else if (isRating == 4) {
@@ -76,7 +76,7 @@ const StarRating = ({
                 if (index + 1 === 1) {
                   setTemporeryRatingText("Dåligt");
                 } else if (index + 1 === 2) {
-                  setTemporeryRatingText("Mindre bra");
+                  setTemporeryRatingText("Sämre");
                 } else if (index + 1 === 3) {
                   setTemporeryRatingText("Ok");
                 } else if (index + 1 === 4) {
@@ -98,7 +98,7 @@ const StarRating = ({
           </div>
         );
       })}
-      <div className={textColor} style={{}}>
+      <div className={textColor} style={{ fontSize: "14px" }}>
         {isTemporeryRatingText ? isTemporeryRatingText : isRatingText}
       </div>
     </div>
