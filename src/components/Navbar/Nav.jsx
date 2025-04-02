@@ -324,7 +324,7 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
           <Link href={"/"} className="relative w-64 h-24 mt-8 ml-8">
             <Image
               className="logo"
-              src="/logo/Logo.png"
+              src="/logo/logo.png"
               alt="loggo för webbutvecklare"
               layout="fill"
             />
