@@ -18,7 +18,6 @@ const numberWithinRange = (number, min, max) =>
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
-  console.log("mySliiiiiides", slides);
 
   const tweenFactor = useRef(0);
   const tweenNodes = useRef([]);
@@ -114,7 +113,7 @@ const EmblaCarousel = (props) => {
           {slides.map((item, index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number">
-                <div className="mt-4 mb-2 font-Caveat text-colorComment">{`"${item.comment}"`}</div>
+                <div className="mt-4 mb-2 text-2xl font-Caveat text-colorComment text-center">{`"${item.comment}"`}</div>
                 <div className=" font-Inter text-colorComment">{item.name}</div>
                 <div className=" text-[8px] font-Inter">
                   {convertDateToDate(item.date)}

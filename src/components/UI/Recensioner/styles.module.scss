@@ -1,17 +1,22 @@
 .reviewTextContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-end;
+
   @media (max-width: 768px) {
-    order: 1;
+    order: 0;
   }
 }
 
 .reviewImagesContainer {
   @media (max-with: 768px) {
-    order: 0;
+    order: 1;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
   }
 }
 

@@ -70,6 +70,8 @@
   letter-spacing: 3px;
   color: #fff;
   z-index: 9;
+  width: 100px;
+  height: 10px;
 }
 
 .ul {
@@ -232,7 +234,8 @@
   border-radius: 50%;
   cursor: pointer;
   background-color: #fff;
-  box-shadow: 0 10px 15px -3px rgb(156 175 175 / 0.5),
+  box-shadow:
+    0 10px 15px -3px rgb(156 175 175 / 0.5),
     0 4px 6px -4px rgb(156 175 175 / 0.5);
 }
 
@@ -276,7 +279,8 @@
   border-radius: 50%;
   cursor: pointer;
   background-color: #fff;
-  box-shadow: 0 10px 15px -3px rgb(156 175 175 / 0.5),
+  box-shadow:
+    0 10px 15px -3px rgb(156 175 175 / 0.5),
     0 4px 6px -4px rgb(156 175 175 / 0.5);
 }
 

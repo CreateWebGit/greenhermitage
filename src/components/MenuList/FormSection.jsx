@@ -21,6 +21,7 @@ import anime from "animejs";
 import ProdSection from "./ProdSection";
 import { createProduct } from "@/lib/actions/products.actions";
 import DropdownProd from "../DropdownsProd";
+import ReactCountryFlag from "react-country-flag";
 
 const FormSection = ({
   isSortable,
@@ -40,11 +41,14 @@ const FormSection = ({
   const [isCategoryID, setCategoryID] = useState("");
   const [isAllCollapsed, setAllCollapsed] = useState(false);
   const [isProductTitle, setProductTitle] = useState("");
+  const [isProductTitleEng, setProductTitleEng] = useState("");
   const [isProductPrice, setProductPrice] = useState("");
   const [isProductDescription, setProductDescription] = useState("");
+  const [isProductDescriptionEng, setProductDescriptionEng] = useState("");
   const [isProductVegan, setProductVegan] = useState(false);
   const [isEditWindow, setEditWindow] = useState(false);
   const [isActionOpen, setIsActionOpen] = useState(false);
+  const [inLanguage, setLanguage] = useState("sv");
 
   const saveCatID = async (id) => {
     await setCategoryID(id);
@@ -64,27 +68,30 @@ const FormSection = ({
 
   const handleNewProductSubmit = async (id, i) => {
     const index = formField.findIndex((product) => product.categoryID === id);
-    console.log("jaja");
     let _formField = [...formField];
     _formField[index].products.push({
       _id: uuidv4(),
       expanded: true,
       title: isProductTitle,
+      titleEng: isProductTitleEng,
       price: isProductPrice,
       description: isProductDescription,
+      descriptionEng: isProductDescriptionEng,
       vegan: isProductVegan,
     });
 
     setFormField(_formField);
 
     setCategoryID("");
-    setProductDescription("");
-    setProductPrice("");
     setProductTitle("");
+    setProductTitleEng("");
+    setProductPrice("");
+    setProductDescription("");
+    setProductDescriptionEng("");
+
     setProductVegan(false);
 
     try {
-      console.log("hihihihih");
       if (formField !== undefined) {
         console.log("myFormField", _formField);
         createProduct(_formField);
@@ -235,6 +242,14 @@ const FormSection = ({
     }
   };
 
+  const handleLangSv = () => {
+    setLanguage("sv");
+  };
+
+  const handleLangEng = () => {
+    setLanguage("eng");
+  };
+
   return (
     <div>
       <DragDropContext
@@ -264,7 +279,7 @@ const FormSection = ({
                   >
                     <div className=" bg-white w-10/12 h-5/6 pt-32 px-16 pb-4 absolute ">
                       <div
-                        className=" absolute top-2 right-2"
+                        className=" absolute top-2 right-2 cursor-pointer"
                         onClick={() => {
                           setEditWindow(false);
                           setCategoryID("");
@@ -272,19 +287,75 @@ const FormSection = ({
                       >
                         X
                       </div>
+                      <div className="absolute top-[40px] right-[75px] flex gap-8 text-white  z-50">
+                        <div
+                          className={cn(
+                            "flex relative justify-between items-center p-2 cursor-pointer",
+                            inLanguage === "sv" ? "border border-slate-500" : ""
+                          )}
+                          onClick={handleLangSv}
+                        >
+                          <ReactCountryFlag
+                            className="emojiFlag"
+                            countryCode="SE"
+                            style={{
+                              fontSize: "2em",
+                            }}
+                            aria-label="United States"
+                          />
+                          <span className="ml-1 text-slate-600">
+                            {"Svenska"}
+                          </span>
+                        </div>
+                        <div
+                          className={cn(
+                            "flex relative justify-between items-center p-2 cursor-pointer",
+                            inLanguage === "eng"
+                              ? "border border-slate-500"
+                              : ""
+                          )}
+                          onClick={handleLangEng}
+                        >
+                          <ReactCountryFlag
+                            className="emojiFlag"
+                            countryCode="GB"
+                            style={{
+                              fontSize: "2em",
+                            }}
+                            aria-label="United States"
+                          />
+                          <span className="ml-1 text-slate-600">
+                            {"Engelska"}
+                          </span>
+                        </div>
+                      </div>
                       <div className="flex gap-4">
                         <div className="flex flex-col grow ">
-                          <Input
-                            name="title"
-                            label="Titel"
-                            type="text"
-                            value={isProductTitle}
-                            onChange={(e) => setProductTitle(e.target.value)}
-                            placeholder="Titel på maträtt"
-                            Icon={HandPlatter}
-                          />
+                          {inLanguage === "sv" ? (
+                            <Input
+                              name="title"
+                              label="Titel (sv)"
+                              type="text"
+                              value={isProductTitle}
+                              onChange={(e) => setProductTitle(e.target.value)}
+                              placeholder="Svensk titel på maträtt"
+                              Icon={HandPlatter}
+                            />
+                          ) : (
+                            <Input
+                              name="title"
+                              label="Titel (eng)"
+                              type="text"
+                              value={isProductTitleEng}
+                              onChange={(e) =>
+                                setProductTitleEng(e.target.value)
+                              }
+                              placeholder="Engelsk titel på maträtt"
+                              Icon={HandPlatter}
+                            />
+                          )}
                         </div>
-                        <div className="flex flex-col grow-0 w-1/4">
+                        <div className="flex flex-col grow-0 w-1/4 ">
                           <Input
                             name="price"
                             label="Pris"
@@ -296,45 +367,53 @@ const FormSection = ({
                           />
                         </div>
                       </div>
-                      <div>
-                        <Input
-                          name="price"
-                          label="Beskrivning"
-                          type="textarea"
-                          value={isProductDescription}
-                          onChange={(e) =>
-                            setProductDescription(e.target.value)
+                      <div className="mt-3">
+                        {inLanguage === "sv" ? (
+                          <Input
+                            name="price"
+                            label="Beskrivning (sv)"
+                            type="textarea"
+                            value={isProductDescription}
+                            onChange={(e) =>
+                              setProductDescription(e.target.value)
+                            }
+                            placeholder="Kort beskrivning på svenska"
+                            Icon={BsInfoLg}
+                          />
+                        ) : (
+                          <Input
+                            name="price"
+                            label="Beskrivning (eng)"
+                            type="textarea"
+                            value={isProductDescriptionEng}
+                            onChange={(e) =>
+                              setProductDescriptionEng(e.target.value)
+                            }
+                            placeholder="Kort beskrivning på engelska"
+                            Icon={BsInfoLg}
+                          />
+                        )}
+                      </div>
+                      <div className="flex justify-end">
+                        <button
+                          type="button"
+                          className=" bg-blue-700 rounded-md text-white px-8 py-4 mt-4"
+                          onClick={() =>
+                            handleNewProductSubmit(
+                              field.categoryID,
+                              categoryIndex
+                            )
                           }
-                          placeholder="Kort beskrivning"
-                          Icon={BsInfoLg}
-                        />
+                        >
+                          Registrera
+                        </button>
                       </div>
-                      <div className="allergiesContainer">
-                        <input
-                          type="checkbox"
-                          id="veganskt"
-                          name="alergier"
-                          value={isProductVegan}
-                          onChange={(e) => setProductVegan(e.target.value)}
-                        />
-                        <label htmlFor="veganskt">Veganskt</label>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          handleNewProductSubmit(
-                            field.categoryID,
-                            categoryIndex
-                          )
-                        }
-                      >
-                        Registrera
-                      </button>
                     </div>
                   </div>
 
                   <Dropdown
                     title={field?.categoryName}
+                    titleEng={field?.categoryNameEng}
                     id={field?.categoryID}
                     onClick={(e) => {
                       toggle(e, field?.categoryID);

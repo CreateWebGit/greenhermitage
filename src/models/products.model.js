@@ -15,6 +15,10 @@ const userSchema = new Schema({
         type: String,
         required: false,
       },
+      categoryNameEng: {
+        type: String,
+        required: false,
+      },
       expanded: {
         type: Boolean,
         required: false,
@@ -33,7 +37,15 @@ const userSchema = new Schema({
             type: String,
             require: false,
           },
+          titleEng: {
+            type: String,
+            require: false,
+          },
           description: {
+            type: String,
+            require: false,
+          },
+          descriptionEng: {
             type: String,
             require: false,
           },

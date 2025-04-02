@@ -18,8 +18,10 @@ const MenuList = ({ data, dataPublished }) => {
   const [formField, setFormField] = useState(data[0].products);
   const [isNewCategoryWindowOpen, setNewCategoryWindowOpen] = useState(false);
   const [isCategoryName, setCategoryName] = useState("");
+  const [isCategoryNameEng, setCategoryNameEng] = useState("");
   const [isSortable, setSortable] = useState(false);
   const [isPublished, setPublished] = useState(productsData);
+  const [inLanguage, setLanguage] = useState("sv");
 
   const handleDragStartCategory = () => {
     //toggleExpand(false);
@@ -174,6 +176,7 @@ const MenuList = ({ data, dataPublished }) => {
     _formField.push({
       _id: uuidv4(),
       categoryName: isCategoryName,
+      categoryNameEng: isCategoryNameEng,
       categoryID: uuidv4(),
       expanded: true,
       products: [],
@@ -264,9 +267,13 @@ const MenuList = ({ data, dataPublished }) => {
         <CategoryNamePopup
           isCategoryName={isCategoryName}
           setCategoryName={setCategoryName}
+          isCategoryNameEng={isCategoryNameEng}
+          setCategoryNameEng={setCategoryNameEng}
           isNewCategoryWindowOpen={isNewCategoryWindowOpen}
           setNewCategoryWindowOpen={setNewCategoryWindowOpen}
           handleNewSectionSubmit={handleNewSectionSubmit}
+          inLanguage={inLanguage}
+          setLanguage={setLanguage}
         />
       )}
     </div>

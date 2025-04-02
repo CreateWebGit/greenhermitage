@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import StarRating from "./StarRating";
 import Input from "../Input";
 import { MdOutlineRateReview } from "react-icons/md";
@@ -8,8 +8,10 @@ import InputStar from "../InputStar";
 import { createReview, fetchReviews } from "@/lib/actions/review.actions";
 import moment from "moment";
 import { v4 as uuidv4 } from "uuid";
+import { Message_data } from "@/context/context";
 
 const Review = ({ reviews }) => {
+  const { inLanguage, setLanguage } = useContext(Message_data);
   console.log("isName");
   console.log(reviews);
 
@@ -100,7 +102,9 @@ const Review = ({ reviews }) => {
                   <div className="ml-6">
                     <div className="ml-1 border-l border-b h-4 w-4"></div>
                     <div className=" font-Inter text-colorComment">
-                      Restaurangen svarar:
+                      {inLanguage === "sv"
+                        ? "Restaurangen svarar"
+                        : "The resurgent answers"}
                     </div>
                     <div className=" font-Caveat text-colorComment">
                       {item.adminComment}
@@ -113,14 +117,16 @@ const Review = ({ reviews }) => {
             );
           })}
         </div>
-        <div className=" order-1 w-full m-0  self-stretch ea-col-6 ea-col-xs-12 md:order-2 md:w-[300px] md:ml-[200px] ">
+        <div className=" order-1 w-full mb-16  self-stretch ea-col-6 ea-col-xs-12 md:order-2 md:w-[300px] md:ml-[200px] md:mb-0">
           <div className=" sticky  top-0 self-end px-4 md:min-h-[100vh] border border-[#F2EEE3] bg-[#F2EEE3] md:bg-[#CDC6B3]  md:shadow-md">
             <div className="">
               <form onSubmit={handleSubmit}>
                 <div className=" flex flex-col pt-8 md:py-[50px] gap-6 md:h-[100vh] md:justify-between">
                   <div className="mb-4 md:mb-12">
                     <h2 className=" text-2xl text-[#4b4a4a] text-colorComment">
-                      Skriv en recention
+                      {inLanguage === "sv"
+                        ? "Skriv en recention"
+                        : "Write a recent review"}
                     </h2>
                     <div className=" h-[2px] rounded-md bg-[#333] w-1/2 mb-3" />
                     <InputStar isRating={isRating} setRating={setRating} />
@@ -130,7 +136,7 @@ const Review = ({ reviews }) => {
                       name="isName"
                       onChange={(e) => setName(e.target.value)}
                       value={isName}
-                      placeholder="Namn"
+                      placeholder={inLanguage === "sv" ? "Namn" : "Name"}
                       Icon={IoIosPerson}
                     />
                     <Input
@@ -138,12 +144,16 @@ const Review = ({ reviews }) => {
                       onChange={(e) => setComment(e.target.value)}
                       value={isComment}
                       type="textarea"
-                      placeholder="Skriv en kommentar.."
+                      placeholder={
+                        inLanguage === "sv"
+                          ? "Skriv en kommentar.."
+                          : "Write a comment.."
+                      }
                       Icon={MdOutlineRateReview}
                     />
                     <input
                       type="submit"
-                      value="Skicka"
+                      value={inLanguage === "sv" ? "Skicka" : "Send"}
                       className="border border-[#c6c5c5] bg-[#F2EEE3] w-full h-[50px] cursor-pointer"
                     />
                   </div>

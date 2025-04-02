@@ -4,11 +4,14 @@ import React, { useState } from "react";
 
 import { CiEdit } from "react-icons/ci";
 import { FaCheck } from "react-icons/fa6";
+import ReactCountryFlag from "react-country-flag";
 
 const InputCategoryName = ({
   icon: Icon,
   name,
+  nameEng,
   value,
+  valueEng,
   label,
   isLabel = true,
   type,
@@ -24,6 +27,8 @@ const InputCategoryName = ({
   categoryID,
 }) => {
   const [isData, setData] = useState(value);
+  const [isDataEng, setDataEng] = useState(valueEng ? valueEng : "");
+  const [inLanguage, setLanguage] = useState("sv");
 
   const handleEditCategory = (e) => {
     setSetEdit({ edit: false, index: 500 });
@@ -37,16 +42,30 @@ const InputCategoryName = ({
 
     let _formField = [...formField];
 
-    _formField[categoryIndex].categoryName = isData;
+    if (inLanguage === "sv") {
+      _formField[categoryIndex].categoryName = isData;
+    } else {
+      _formField[categoryIndex].categoryNameEng = isDataEng;
+    }
 
     setFormField(_formField);
 
     createProduct(_formField);
   };
 
+  const handleLangSv = (e) => {
+    e.stopPropagation();
+    setLanguage("sv");
+  };
+
+  const handleLangEng = (e) => {
+    e.stopPropagation();
+    setLanguage("eng");
+  };
+
   return (
     <>
-      <div className="m-auto">
+      <div className="w-full ">
         {isLabel ? (
           <div className="mb-2">
             <label>{label}</label>
@@ -84,26 +103,84 @@ const InputCategoryName = ({
                 />
               ) : (
                 <div className="h-16 w-full border-b  pl-2 pt-4 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700">
-                  {value}
+                  {isData}
                 </div>
               )}
             </>
           ) : (
-            <div className="flex">
+            <div className="flex w-full">
               {isSetEdit.edit == true && isSetEdit.index == categoryIndex ? (
-                <div className="flex gap-3 items-center">
-                  <input
-                    name={name}
-                    value={isData}
-                    placeholder={placeholder}
-                    onChange={(e) => setData(e.target.value)}
-                    className="h-12 w-full text-center rounded-sm border pt-[0px] pl-2 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
-                  />
-                  <FaCheck onClick={(e) => handleEditCategory(e)} />
+                <div className="gap-3 items-center relative w-full">
+                  <div className="w-full flex justify-center">
+                    {inLanguage === "sv" ? (
+                      <input
+                        name={name}
+                        value={isData}
+                        placeholder={placeholder}
+                        onChange={(e) => {
+                          setData(e.target.value);
+                          e.preventDefault();
+                          e.stopPropagation();
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                        className="h-12 text-center rounded-sm border border-blue-300 pt-[0px] pl-2 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
+                      />
+                    ) : (
+                      <input
+                        name={nameEng}
+                        value={isDataEng}
+                        placeholder={placeholder}
+                        onChange={(e) => {
+                          setDataEng(e.target.value);
+                          e.preventDefault();
+                          e.stopPropagation();
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                        className="h-12 text-center rounded-sm border border-blue-300 pt-[0px] pl-2 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
+                      />
+                    )}
+                  </div>
+                  <div className="absolute right-2 top-1 z-50 flex items-center">
+                    <div className="flex justify-end items-end gap-2 w-full  text-white z-50 ">
+                      <div
+                        className={cn(
+                          "flex relative justify-between items-center px-1 cursor-pointer",
+                          inLanguage === "sv" ? "border border-slate-500" : ""
+                        )}
+                        onClick={handleLangSv}
+                      >
+                        <ReactCountryFlag
+                          className="emojiFlag"
+                          countryCode="SE"
+                          style={{
+                            fontSize: "2em",
+                          }}
+                          aria-label="United States"
+                        />
+                      </div>
+                      <div
+                        className={cn(
+                          "flex relative justify-between items-center px-1 cursor-pointer",
+                          inLanguage === "eng" ? "border border-slate-500" : ""
+                        )}
+                        onClick={handleLangEng}
+                      >
+                        <ReactCountryFlag
+                          className="emojiFlag"
+                          countryCode="GB"
+                          style={{
+                            fontSize: "2em",
+                          }}
+                          aria-label="United States"
+                        />
+                      </div>
+                    </div>
+                    <FaCheck onClick={(e) => handleEditCategory(e)} />
+                  </div>
                 </div>
               ) : (
-                <div className="h-12 w-full flex items-center pl-2 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700">
-                  <div>{value}</div>
+                <div className="h-12 w-full flex justify-center items-center pl-2 text-gray-600 outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700">
+                  <div>{isData}</div>
                 </div>
               )}
             </div>

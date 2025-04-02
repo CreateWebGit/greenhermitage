@@ -1,13 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { cn } from "@/utils/utils";
 import styles from "./style.module.scss";
-import { v4 as uuidv4 } from "uuid";
+import { motion, useInView } from "framer-motion";
+import { Message_data } from "@/context/context";
 
 const RestaurantMenu = ({ menuData }) => {
-  console.log(menuData);
   const [isCurrentCategory, setCurrentCategory] = useState(0);
-  console.log("myINdex", isCurrentCategory);
+  const { inLanguage, setLanguage } = useContext(Message_data);
+
   return (
     <div className={styles.container}>
       <div className={styles.categoryBar}>
@@ -20,7 +21,9 @@ const RestaurantMenu = ({ menuData }) => {
             key={index}
             onClick={() => setCurrentCategory(index)}
           >
-            {item.categoryName.toLowerCase()}
+            {inLanguage === "sv"
+              ? item.categoryName.toLowerCase()
+              : item.categoryNameEng?.toLowerCase()}
           </div>
         ))}
       </div>
@@ -28,15 +31,24 @@ const RestaurantMenu = ({ menuData }) => {
         {menuData.map(
           (categoryItem, index) =>
             index === isCurrentCategory && (
-              <div key={categoryItem.categoryID}>
+              <motion.div
+                key={categoryItem.categoryID}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
                 <h2 className="text-xl font-bold mb-2">
-                  {categoryItem.categoryName}
+                  {inLanguage === "sv"
+                    ? categoryItem.categoryName
+                    : categoryItem.categoryNameEng}
                 </h2>
                 {categoryItem.products.map((item, index) => (
                   <div className="mb-12" key={item._id}>
                     <div className="ea-grid" key={index}>
                       <div className="flex justify-between ea-col-9 ea-col-xs-9">
-                        <p className=" font-forum text-2xl">{item.title}</p>
+                        <p className=" font-forum text-2xl">
+                          {inLanguage === "sv" ? item.title : item.titleEng}
+                        </p>
                       </div>
                       <div className=" font-giestsans text-lg ea-col-3 ea-col-xs-3">
                         <p className=" text-right" key={index}>
@@ -44,10 +56,14 @@ const RestaurantMenu = ({ menuData }) => {
                         </p>
                       </div>
                     </div>
-                    <div>{item.description}</div>
+                    <div>
+                      {inLanguage === "sv"
+                        ? item.description
+                        : item.descriptionEng}
+                    </div>
                   </div>
                 ))}
-              </div>
+              </motion.div>
             )
         )}
       </div>

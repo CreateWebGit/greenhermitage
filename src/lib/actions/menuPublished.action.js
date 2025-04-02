@@ -7,8 +7,6 @@ export async function fetchMenuPublished() {
 
   const featchMenuPublished = await MenuPublished.find().lean();
 
-  console.log(featchMenuPublished);
-
   return JSON.parse(JSON.stringify(featchMenuPublished[0].published));
 }
 
@@ -18,8 +16,7 @@ export async function updateMenuPublished(isPublished) {
   try {
     const filter = { _id: 1 };
     const update = { published: isPublished };
-    console.log(filter);
-    console.log(update);
+
     connectMongoDB();
 
     const createReview = await MenuPublished.findOneAndUpdate(filter, update);

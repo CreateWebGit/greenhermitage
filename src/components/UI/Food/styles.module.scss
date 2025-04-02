@@ -1,5 +1,9 @@
 .foodSection {
-  margin: 150px 0 20px;
+  padding: 180px 0 0px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .headerText {
@@ -13,17 +17,29 @@
     font-size: 90px;
     color: #5f6952;
     line-height: 80px;
+
+    @media (max-width: 768px) {
+      font-size: 60px;
+      line-height: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 10px;
   }
 }
 
 .foodContainer {
   position: relative;
+  width: 900px;
 
   .foodTextWrapper {
     p {
       font-family: var(--font-inter);
       color: #3d4338;
       margin-top: 30px;
+      width: 100%;
+      padding: 0 10px;
     }
     @media (max-width: 768px) {
       order: 1;
@@ -31,14 +47,16 @@
   }
 
   .foodImageWrapper {
-    margin-top: -100px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
 
     img {
       width: 360px;
       height: auto;
 
       @media (max-width: 768px) {
-        margin: auto;
+        width: 300px;
       }
     }
     @media (max-width: 768px) {
@@ -46,15 +64,19 @@
       margin-top: 0;
     }
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .greenImage {
   background-image: url("/home/plantage.jpeg");
   background-size: cover;
   background-position: center center;
-  width: 100%;
+  width: 1000px;
   height: 360px;
   margin-top: 30px;
+  border-radius: 30px;
 
   @media (max-width: 768px) {
     display: none;

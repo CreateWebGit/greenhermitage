@@ -1,11 +1,15 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Message_data } from "@/context/context";
 
 const Food = () => {
   const ref = useRef(null);
+
+  const { inLanguage, setLanguage } = useContext(Message_data);
+  console.log("language", inLanguage);
 
   // Get scroll progress inside the ref container
   const { scrollYProgress } = useScroll({
@@ -21,10 +25,11 @@ const Food = () => {
   return (
     <section className={styles.foodSection}>
       <div ref={ref} className={styles.headerText}>
-        <span>MATEN</span>
-        <h2>
-          Vår passion för växtbaserad <br />
-          matlagning
+        <span>{inLanguage === "sv" ? "Maten" : "Food"}</span>
+        <h2 className="whitespace-pre-line">
+          {inLanguage === "sv"
+            ? "Vår passion för växtbaserad \n matlagning"
+            : "Our passion for plant-based \n cooking"}
         </h2>
       </div>
       <div className={[styles.foodContainer, "ea-grid"].join(" ")}>
@@ -34,10 +39,9 @@ const Food = () => {
           )}
         >
           <p>
-            På Hermitage, tror vi på att ge näring till både kropp och själ. Vår
-            meny är omsorgsfullt gjord med färska, säsongsbetonade råvaror från
-            lokala gårdar. Oavsett om du är en livslång vegetarian eller bara
-            utforskar en växtbaserad kost, erbjuder vi något för alla smaker.
+            {inLanguage === "sv"
+              ? "På Hermitage, tror vi på att ge näring till både kropp och själ. Vår meny är omsorgsfullt gjord med färska, säsongsbetonade råvaror från lokala gårdar. Oavsett om du är en livslång vegetarian eller bara utforskar en växtbaserad kost, erbjuder vi något för alla smaker."
+              : "At Hermitage, we believe in nourishing both body and soul. Our menu is carefully crafted with fresh, seasonal ingredients from local farms. Whether you're a lifelong vegetarian or just exploring a plant-based diet, we offer something for every taste."}
           </p>
         </div>
 

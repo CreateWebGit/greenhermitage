@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import StarRating from "./Review/StarRating";
 import { cn } from "@/utils/utils";
 import { PiShootingStarFill } from "react-icons/pi";
+import { Message_data } from "@/context/context";
 
 const InputStar = ({
   name,
@@ -15,6 +16,7 @@ const InputStar = ({
   setRating,
 }) => {
   const [isColor, setColor] = useState("text-[#333]");
+  const { inLanguage, setLanguage } = useContext(Message_data);
   let mycolor = "";
   return (
     <>
@@ -44,7 +46,9 @@ const InputStar = ({
             className=" w-full bg-white  py-2 pl-2 text-[#9CA3B0] outline-transparent focus:border-blue-500 focus:ring-2 focus:ring-blue-700"
           >
             <p className="text-[#959caa] outline-transparent">
-              Betygsätt din upplevelse:
+              {inLanguage === "sv"
+                ? "Betygsätt din upplevelse:"
+                : "Rate your experience:"}
             </p>
             <div className=" h-[1.2px]  bg-[#6c717b] w-[80%]" />
             <StarRating isRating={isRating} setRating={setRating} />

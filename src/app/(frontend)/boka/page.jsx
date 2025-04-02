@@ -3,23 +3,16 @@ import Navbar from "@/components/Navbar";
 import Recensioner from "@/components/UI/Recensioner";
 import { fetchHighlightReviews } from "@/lib/actions/review.actions";
 
+import HeaderBooking from "@/components/UI/HeaderBooking";
+import { fetchMenuPublished } from "@/lib/actions/menuPublished.action";
+
 export default async function Home() {
   const reviewHighLightData = await fetchHighlightReviews();
+  const menuPublishedData = await fetchMenuPublished();
+
   return (
     <div className="bg-[#F2EEE3] overflow-hidden">
-      <div className=" bg-siteBackground ">
-        <Navbar />
-        <section
-          className="bg-[url('/book/header.jpeg')] w-full h-[500px] bg-cover flex items-center justify-center"
-          style={{ backgroundPosition: "bottom -1150px right 0px" }}
-        >
-          <h1 className=" font-Caveat text-center z-50 text-[#EFE7D2] text-[128px]">
-            Boka bord
-          </h1>
-        </section>
-
-        <BookingForm />
-      </div>
+      <HeaderBooking menuPublishedData={menuPublishedData} />
       <Recensioner reviewHighLightData={reviewHighLightData} />
     </div>
   );

@@ -3,25 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import React, { useState, useEffect, useContext } from "react";
-
 import { Message_data } from "@/context/context";
-// import { Message_data } from "../../context/context";
 import { navLinks } from "./data";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
-import { AiOutlineMenu, AiOutlineClose, AiFillInstagram } from "react-icons/ai";
-import {
-  MdEmail,
-  MdOutlineAccessTime,
-  MdKeyboardArrowDown,
-} from "react-icons/md";
-import { BsTelephoneFill, BsLinkedin, BsFacebook } from "react-icons/bs";
-import Flag from "react-world-flags";
 import ReactCountryFlag from "react-country-flag";
-
-import styles from "./styles.module.css";
 import { cn } from "@/utils/utils";
 import Topbar from "./Topbar";
-import { Logo } from "./Logo";
 
 const Nav = ({ topbar = false, white, menuPublishedData }) => {
   const [isNav, setIsNav] = useState(false);
@@ -32,12 +21,6 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
 
   const { inLanguage, setLanguage } = useContext(Message_data);
 
-  console.log(inLanguage);
-
-  console.log(navLinks);
-
-  console.log(menuPublishedData);
-
   let filteredMenu = [];
 
   if (menuPublishedData === false) {
@@ -46,13 +29,8 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
     filteredMenu = navLinks;
   }
 
-  console.log("filtered", filteredMenu);
-
-  // const scroll = scrollInfo.y;
-  // let test = "-100%";
-
   const router = useRouter();
-  const path = router.path;
+
   const pathname = usePathname();
 
   const handleNav = () => {
@@ -72,21 +50,6 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
     setLanguage("sv");
     setShowLanguage(false);
   };
-
-  /*
-	useEffect(() => {
-		const handleScroll = () => {
-			if (scroll > 10.0) {
-				//setSticky(true);
-			}
-		};
-		window.addEventListener('scroll', handleScroll);
-	});
-	*/
-
-  // const styleprops = { scroll, isNav, background };
-
-  // const classes = useStyles(styleprops);
 
   return (
     <>
@@ -358,7 +321,7 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
             <p className="text-center ">Låt oss konekta!</p>
           </div>
           */}
-          <Link href={"/"} className="relative w-44 h-14 mt-4 ml-8">
+          <Link href={"/"} className="relative w-64 h-24 mt-8 ml-8">
             <Image
               className="logo"
               src="/logo/Logo.png"
@@ -424,9 +387,6 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
                 );
               })}
             </ul>
-          </div>
-          <div className={styles.navMobileSlogan}>
-            <p>{inLanguage === "sv" ? "Låt oss konekta" : "Let's connect"}</p>
           </div>
 
           {/*

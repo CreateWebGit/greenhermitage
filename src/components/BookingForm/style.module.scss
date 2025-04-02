@@ -1,5 +1,6 @@
 .container {
-  margin: -75px auto 20px;
+  bottom: -130px;
+  position: absolute;
   padding: 0 30px;
   width: 1000px;
   height: 250px;
@@ -10,15 +11,11 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #333;
-  z-index: 99999;
-  @media (max-width: 986px) {
-    margin: -135px auto 20px;
-    height: 450px;
-    width: 90%;
-  }
+  z-index: 999;
+
   @media (max-width: 786px) {
-    margin: -135px auto 20px;
-    height: 450px;
+    bottom: -480px;
+    height: 550px;
     width: 90%;
   }
 }

@@ -13,11 +13,13 @@ import InputCategoryName from "./InputCategoryName";
 
 const Dropdown = ({
   title,
+  titleEng,
   onClick,
   children,
   expanded,
   categoryIndex,
   isSortable,
+  field,
 
   handleRemove,
   setSortable,
@@ -40,6 +42,7 @@ const Dropdown = ({
   const [isEditCategory, setEditCategory] = useState(false);
   const [isSetEdit, setSetEdit] = useState({ index: 500, edit: false });
   const [isCategoryName, setCategoryName] = useState(title);
+  const [isCategoryNameEng, setCategoryNameEng] = useState(titleEng);
 
   //const itemRef = useRef();
   //const actionRef = useRef();
@@ -94,6 +97,15 @@ const Dropdown = ({
   const handleMouseOut = () => {
     if (window.innerWidth > 800) {
       setIsHovering(false);
+    }
+  };
+
+  const test = (e) => {
+    console.log("vvvv", e.target.name);
+    if (e.target.name === "name") {
+      setCategoryName(e.target.value);
+    } else {
+      setCategoryNameEng(e.target.value);
     }
   };
   return (
@@ -176,13 +188,16 @@ const Dropdown = ({
                 >
                   <InputCategoryName
                     name="categoryName"
+                    nameEng="categoryNameEng"
                     value={isCategoryName}
+                    valueEng={isCategoryNameEng}
                     isLabel={false}
                     isSetEdit={isSetEdit}
                     setSetEdit={setSetEdit}
-                    onChange={(e) => setCategoryName(e.target.value)}
+                    onChange={(e) => test(e)}
                     categoryIndex={categoryIndex}
                     formField={formField}
+                    field={field}
                     setFormField={setFormField}
                     categoryID={categoryID}
                   />
@@ -227,8 +242,8 @@ const Dropdown = ({
                 isEditCategory
                   ? "default max-h-[1px] "
                   : expanded
-                  ? "default max-h-[1000px]"
-                  : "default max-h-[1px] "
+                    ? "default max-h-[1000px]"
+                    : "default max-h-[1px] "
               )}
             >
               {children}

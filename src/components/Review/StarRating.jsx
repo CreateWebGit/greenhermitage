@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/utils/utils";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Message_data } from "@/context/context";
 
 const DEFAULT_COUNT = 5;
 const DEFAULT_ICON = 9734;
@@ -20,20 +21,21 @@ const StarRating = ({
   const [isTemporaryRating, setTemporaryRating] = useState(0);
   const [isRatingText, setRatingText] = useState("");
   const [isTemporeryRatingText, setTemporeryRatingText] = useState("");
+  const { inLanguage, setLanguage } = useContext(Message_data);
 
   let stars = Array(count || DEFAULT_COUNT).fill(icon || DEFAULT_ICON);
 
   useEffect(() => {
     if (isRating == 1) {
-      setRatingText("Dåligt");
+      setRatingText(inLanguage === "sv" ? "Dålig" : "Bad");
     } else if (isRating == 2) {
-      setRatingText("Sämre");
+      setRatingText(inLanguage === "sv" ? "Sämre" : "worse");
     } else if (isRating == 3) {
       setRatingText("Ok");
     } else if (isRating == 4) {
-      setRatingText("Bra");
+      setRatingText(inLanguage === "sv" ? "Bra" : "Good");
     } else if (isRating == 5) {
-      setRatingText("Utmärkt");
+      setRatingText(inLanguage === "sv" ? "Utmärkt" : "Excellent");
     }
   });
 
@@ -74,15 +76,19 @@ const StarRating = ({
               }
               if (!onlyView) {
                 if (index + 1 === 1) {
-                  setTemporeryRatingText("Dåligt");
+                  setTemporeryRatingText(inLanguage === "sv" ? "Dålig" : "Bad");
                 } else if (index + 1 === 2) {
-                  setTemporeryRatingText("Sämre");
+                  setTemporeryRatingText(
+                    inLanguage === "sv" ? "Sämre" : "worse"
+                  );
                 } else if (index + 1 === 3) {
                   setTemporeryRatingText("Ok");
                 } else if (index + 1 === 4) {
-                  setTemporeryRatingText("Bra");
+                  setTemporeryRatingText(inLanguage === "sv" ? "Bra" : "Good");
                 } else if (index + 1 === 5) {
-                  setTemporeryRatingText("Utmärkt");
+                  setTemporeryRatingText(
+                    inLanguage === "sv" ? "Utmärkt" : "Excellent"
+                  );
                 }
               }
             }}

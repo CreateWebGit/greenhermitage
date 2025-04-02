@@ -33,8 +33,9 @@ section {
   padding-right: 8rem;
 
   @media (max-width: 768px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -239,8 +240,20 @@ input[type="checkbox"]:checked::after {
   max-width: 36rem;
   margin: auto;
   --slide-height: 19rem;
-  --slide-spacing: 1rem;
-  --slide-size: 55%;
+  --slide-spacing: 7rem;
+  --slide-size: 60%;
+
+  @media (min-width: 1920px) {
+  }
+
+  @media (max-width: 1464px) {
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    --slide-size: 70%;
+    --slide-spacing: 0rem;
+  }
 }
 .embla__viewport {
   overflow: hidden;
@@ -271,6 +284,7 @@ input[type="checkbox"]:checked::after {
 .embla__controls {
   display: flex;
   justify-content: center;
+
   margin: 50px 0;
 }
 .embla__buttons {
@@ -278,6 +292,7 @@ input[type="checkbox"]:checked::after {
   justify-content: end;
   gap: 5px;
   align-items: center;
+  margin-right: 40px;
 }
 .embla__button {
   -webkit-tap-highlight-color: rgba(118, 116, 116, 0.5);
