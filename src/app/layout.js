@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import "@uploadthing/react/styles.css";
 import "./globals.css";
 import "./ea-grid.css";
+import "./main.scss";
 import { AuthProvider } from "./Providers";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";

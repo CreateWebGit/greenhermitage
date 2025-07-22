@@ -9,7 +9,7 @@ const Page = async () => {
   const reviewHighLightData = await fetchHighlightReviews();
 
   return (
-    <div className=" bg-[#F2EEE3]">
+    <div className="bg-[#F2EEE3]">
       <Navbar />
 
       <Header />

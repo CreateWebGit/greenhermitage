@@ -52,6 +52,19 @@ const Nav = ({ topbar = false, white, menuPublishedData }) => {
   };
 
   return (
+    <div>
+      <Link href="/meny">
+      A la carte
+      </Link>
+      <Link href="/meny">
+      Lunch meny
+      </Link>
+      <Link href="/boka">
+      Boka bord
+      </Link>
+      </div>
+  )
+  return (
     <>
       <div
         className={cn(

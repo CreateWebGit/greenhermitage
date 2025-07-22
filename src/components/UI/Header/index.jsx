@@ -3,9 +3,32 @@ import { Logo } from "@/components/Navbar/Logo";
 import React, { useContext } from "react";
 import AnimateText from "../AnimateText";
 import { Message_data } from "@/context/context";
+import Button from '../../Button'
 
 const Header = () => {
   const { inLanguage, setLanguage } = useContext(Message_data);
+  return (
+    <section className="gh-section--hero">
+      <div className="hero-content">
+        {/* asdasd */}
+        <img src="/home/google_reviews.svg"/>
+        <img src="/home/hermitage_logo_complete.svg"/>
+        <p>
+          {inLanguage === "sv" 
+          ? "Vi erbjuder vegetarisk mat lagad med kärlek i en trevlig miljö i Gamla Stan i Stockholm. Till oss ska den med hunger gå. Känner du att det kurrar i magen? Styr då din kosa hit och njut av vår vegetariska buffé." 
+          : "We offer vegetarian food made with love in a cozy setting in Gamla Stan, Stockholm. If you’re hungry, this is the place to be. Feeling your stomach growl? Then head our way and enjoy our vegetarian buffet."}
+        </p>
+        <div className="button-container my-0 flex justify-center gap-4">
+          <Button url="/boka">
+            {inLanguage === "sv" ? "Boka bord" : "Book a table"}
+          </Button>
+          <Button url="/lunch-meny" dark={false}>
+            {inLanguage === "sv" ? "Vår meny" : "Our menu menu"}
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
 
   return (
     <header className="hero z-40 relative ">
