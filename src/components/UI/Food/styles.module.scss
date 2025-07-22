@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  margin: auto;
 }
 
 .headerText {
@@ -70,7 +71,7 @@
 }
 
 .greenImage {
-  background-image: url("/home/plantage.jpeg");
+  background-image: url("/home/plantage.webp");
   background-size: cover;
   background-position: center center;
   width: 1000px;

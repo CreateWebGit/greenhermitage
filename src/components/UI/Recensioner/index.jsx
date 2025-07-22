@@ -18,7 +18,7 @@ const Recensioner = ({ reviewHighLightData, frontpage }) => {
     <section
       className={cn(
         frontpage ? "mt-[20px] md:mt-[50px]" : "mt-[450px] md:mt-[150px]",
-        "bg-[#F2EEE3] py-[75px]  overflow-hidden  "
+        "bg-[#F2EEE3] py-[75px]  overflow-hidden mx-auto "
       )}
     >
       <div className=" w-[100%]">
@@ -52,7 +52,7 @@ const Recensioner = ({ reviewHighLightData, frontpage }) => {
                 viewport={{ once: true, margin: "-300px 0px -300px 0px" }}
                 transition={{ duration: 1 }}
                 className={styles.image1}
-                src="/home/group/Rectangle1.png"
+                src="/home/group/Rectangle1.webp"
                 alt=""
               />
               <motion.img
@@ -61,7 +61,7 @@ const Recensioner = ({ reviewHighLightData, frontpage }) => {
                 viewport={{ once: true, margin: "-300px 0px -300px 0px" }}
                 transition={{ duration: 1 }}
                 className={styles.image2}
-                src="/home/group/Rectangle2.png"
+                src="/home/group/Rectangle2.webp"
                 alt=""
               />
             </div>
@@ -72,7 +72,7 @@ const Recensioner = ({ reviewHighLightData, frontpage }) => {
                 viewport={{ once: true, margin: "0px 0px 100px 0px" }}
                 transition={{ duration: 1 }}
                 className={styles.image3}
-                src="/home/group/Rectangle3.png"
+                src="/home/group/Rectangle3.webp"
                 alt=""
               />
               <motion.img
@@ -81,7 +81,7 @@ const Recensioner = ({ reviewHighLightData, frontpage }) => {
                 viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1 }}
                 className={styles.image4}
-                src="/home/group/Rectangle4.png"
+                src="/home/group/Rectangle4.webp"
                 alt=""
               />
             </div>

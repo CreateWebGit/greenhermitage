@@ -12,7 +12,7 @@ const HeaderBooking = ({ menuPublishedData }) => {
       <Navbar menuPublishedData={menuPublishedData} />
 
       <section
-        className="bg-[url('/book/header.jpeg')] bg-[center_top_-2rem] z-0 w-full h-[300px] bg-cover flex flex-col items-center justify-center md:h-[500px] md:bg-[center_top_-20rem] relative"
+        className="bg-[url('/book/header.webp')] bg-[center_top_-2rem] z-0 w-full h-[300px] bg-cover flex flex-col items-center justify-center md:h-[500px] md:bg-[center_top_-20rem] relative"
         //style={{ backgroundPosition: "bottom -1150px right 0px" }}
       >
         <div className=" absolute top-0 bottom-0 right-0 left-0 bg-black/50" />

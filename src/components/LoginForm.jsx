@@ -40,7 +40,7 @@ const LoginForm = () => {
 
   return (
     <div className="grid place-items-center h-screen">
-      <div className="shadow-lg p-5 rounded-lg border-t-4 border-green-400">
+      <div className="shadow-lg p-5 rounded-lg border-t-4 border-green-400 w-[300] h-[350]">
         <h1 className="text-xl font-bold my-4">Login</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -67,10 +67,10 @@ const LoginForm = () => {
             Glömt lösenord? <span className="underline">Återställ</span>
           </Link>
 
-          <Link className="text-sm mt-3 text-right" href={"/registrera"}>
+          {/* <Link className="text-sm mt-3 text-right" href={"/registrera"}>
             Har du inte ett registrerat konto?&nbsp;
             <span className="underline">Registrera</span>
-          </Link>
+          </Link> */}
         </form>
       </div>
     </div>

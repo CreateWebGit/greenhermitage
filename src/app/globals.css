@@ -111,7 +111,7 @@ input[type="checkbox"]:checked::after {
 
 .hero {
   position: relative;
-  background-image: url(/home/heroIMG1.png);
+  background-image: url('/home/heroIMG1.webp');
   background-size: cover;
   background-position: 0% 30%;
   background-repeat: no-repeat;

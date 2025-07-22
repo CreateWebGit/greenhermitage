@@ -10,11 +10,11 @@ import {
 import { RiUserStarLine } from "react-icons/ri";
 
 export const routes = [
-  {
-    icon: Building2,
-    label: "Om oss",
-    href: `/dashboard/om-oss`,
-  },
+  // {
+  //   icon: Building2,
+  //   label: "Om oss",
+  //   href: `/dashboard/om-oss`,
+  // },
   {
     icon: HandPlatter,
     label: "À la certe meny",

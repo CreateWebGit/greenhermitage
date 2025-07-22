@@ -33,6 +33,16 @@ const ProdSection = ({
     });
   };
 
+  const handleExpandAndCollaps = (expand) => {
+    let _formField = [...formField];
+    console.log(_formField);
+    _formField[categoryIndex].products.map((item) => {
+      item.expanded = expand;
+    });
+    console.log(_formField);
+    setFormField(_formField);
+  };
+
   return (
     <div className="flex flex-row items-end py-4 mb-4 mt-0 border-r border-l border-b border-b-gray-150 border-l-gray-150 border-r-gray-150 z-10">
       <div className="grow">

@@ -9,7 +9,7 @@ export default async function Home() {
     <div className="w-full  bg-[#F2EEE3]">
       <div className=" bg-siteBackground ">
         <Navbar />
-        <section className=" bg-[url('/lunch-menu/header.jpg')] bg-[center_top_1rem] w-full h-[300px] bg-cover flex items-end justify-center relative md:h-[500px] md:bg-[center_top_-15rem] md:items-center">
+        <section className=" bg-[url('/lunch-menu/header.webp')] bg-[center_top_1rem] w-full h-[300px] bg-cover flex items-end justify-center relative md:h-[500px] md:bg-[center_top_-15rem] md:items-center">
           <div className=" absolute top-0 bottom-0 right-0 left-0 bg-black/50 " />
           <h1 className=" font-Caveat text-center z-50 text-[#EFE7D2] mb-12 text-[80px] md:text-[128px] md:mb-0">
             Lunch meny

@@ -50,7 +50,7 @@ const Food = () => {
             " "
           )}
         >
-          <motion.img style={{ x, y, rotate }} src="/home/vegmeal.png" alt="" />
+          <motion.img style={{ x, y, rotate }} src="/home/vegmeal.webp" alt="" />
         </div>
       </div>
 
