@@ -1,3 +1,5 @@
+import TerserPlugin from 'terser-webpack-plugin';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["lucide-react"], // add this
@@ -15,10 +17,10 @@ const nextConfig = {
       },
     ],
   },
-  webpack(config, { dev, isServer }) { //remove console logs from prod, could help prevent performance issues a bit.
+  webpack(config, { dev, isServer }) { //remove console logs
         if (!dev && !isServer) {
             config.optimization.minimizer.push(
-                new (require('terser-webpack-plugin'))({
+                new TerserPlugin({
                     terserOptions: {
                         compress: {
                             drop_console: true,
@@ -29,7 +31,7 @@ const nextConfig = {
         }
 
         return config;
-    },
+    }
 };
 
 export default nextConfig;
