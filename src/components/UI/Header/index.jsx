@@ -2,6 +2,7 @@
 import { Logo } from "@/components/Navbar/Logo";
 import React, { useContext } from "react";
 import AnimateText from "../AnimateText";
+import { motion, useInView } from "framer-motion";
 import { Message_data } from "@/context/context";
 import Button from '../../Button'
 
@@ -10,7 +11,6 @@ const Header = () => {
   return (
     <section className="gh-section--hero">
       <div className="hero-content">
-        {/* asdasd */}
         <img src="/home/google_reviews.svg"/>
         <img src="/home/hermitage_logo_complete.svg"/>
         <p>
@@ -27,6 +27,24 @@ const Header = () => {
           </Button>
         </div>
       </div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 1 }}
+        transition={{ duration: 1 }}
+        className="quote"
+      >
+        <p>
+          {inLanguage === "sv"
+            ? " Vi jobbar ständigt med att förbättra den planet vi lever på och jobbar i miljöns tecken. Därför är upp till"
+            : "We are constantly working to improve the planet we live on and work in the name of the environment. Therefore, it is up to"}{" "}
+          <span className="text-[#DE803D]">
+            {inLanguage === "sv"
+              ? "50% av våra rätter ekologiska."
+              : "50% of our dishes are organic."}
+          </span>
+        </p>
+      </motion.div>
     </section>
   )
 

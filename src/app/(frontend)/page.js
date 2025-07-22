@@ -4,15 +4,13 @@ import Food from "@/components/UI/Food";
 import { fetchHighlightReviews } from "@/lib/actions/review.actions";
 import ContactSection from "@/components/ContactSection";
 import Header from "@/components/UI/Header";
-import NavTest from "@/components/NavTest";
 
 const Page = async () => {
   const reviewHighLightData = await fetchHighlightReviews();
 
   return (
     <div className="bg-[#F2EEE3]">
-      {/* <Navbar /> */}
-      <NavTest/>
+      <Navbar />
 
       <Header />
 
