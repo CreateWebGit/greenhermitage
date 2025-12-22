@@ -8,34 +8,36 @@ import { Button } from "@/components/UI/button";
 import { Calendar } from "./calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 
-export function DatePicker({ date, setDate }) {
-  console.log("hihi", date);
-  return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant={"outline"}
-          className={cn(
-            " font-normal bg-colorForm hover:border-[#5F6952] w-full flex justify-start h-[50px]",
-            !date && "text-muted-foreground"
-          )}
-        >
-          {date ? (
-            format(date, "yyyy-MM-dd")
-          ) : (
-            <span className="text-[#9CA3B0] font-Inter">Datum</span>
-          )}
-          <CalendarIcon className="mr-2 h-4 w-4 text-[#9CA3B0]" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          initialFocus
-        />
-      </PopoverContent>
-    </Popover>
-  );
+export function DatePicker({ date, setDate, errors }) {
+	console.log("hihi", date);
+	return (
+		<Popover>
+			<PopoverTrigger asChild>
+				<Button
+					variant={"outline"}
+					className={cn(
+						" font-normal bg-colorForm hover:border-[#5F6952] w-full flex justify-start h-[50px]",
+						!date && "text-muted-foreground" && errors.date
+							? "border border-red-400"
+							: ""
+					)}
+				>
+					{date ? (
+						format(date, "yyyy-MM-dd")
+					) : (
+						<span className="text-[#9CA3B0] font-Inter">Datum</span>
+					)}
+					<CalendarIcon className="mr-2 h-4 w-4 text-[#9CA3B0]" />
+				</Button>
+			</PopoverTrigger>
+			<PopoverContent className="w-auto p-0">
+				<Calendar
+					mode="single"
+					selected={date}
+					onSelect={setDate}
+					initialFocus
+				/>
+			</PopoverContent>
+		</Popover>
+	);
 }

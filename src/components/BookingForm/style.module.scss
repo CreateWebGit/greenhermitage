@@ -1,21 +1,21 @@
 .container {
-  bottom: -130px;
-  position: absolute;
-  padding: 0 30px;
-  width: 1000px;
-  height: 250px;
-  background-color: white;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #333;
-  z-index: 999;
+	bottom: -130px;
+	position: absolute;
+	padding: 0 30px;
+	width: 1000px;
+	height: 300px;
+	background-color: white;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #333;
+	z-index: 999;
 
-  @media (max-width: 786px) {
-    bottom: -480px;
-    height: 550px;
-    width: 90%;
-  }
+	@media (max-width: 786px) {
+		bottom: -480px;
+		height: 550px;
+		width: 90%;
+	}
 }

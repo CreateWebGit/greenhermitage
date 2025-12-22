@@ -1,76 +1,109 @@
 //emils sass fixes
 
 .gh-section--hero {
-    height: 67.5rem;
-    width: 100%;
-    background: black;
-    max-width: unset;
-    color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)), url('/home/heroIMG1.webp') no-repeat;
-    background-size: cover;
-    position: relative;
+	height: 67.5rem;
+	width: 100%;
+	background: black;
+	max-width: unset;
+	color: white;
+	background:
+		linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)),
+		url("/home/heroIMG1.webp") no-repeat;
+	background-size: cover;
+	position: relative;
 
-    .hero-content {
-        padding-top: 12rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
+	.hero-content {
+		padding-top: 12rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
 
-        p {
-            max-width: 37.5rem;
-            text-align: center;
-            text-wrap: pretty;
-        }
+		p {
+			max-width: 37.5rem;
+			text-align: center;
+			text-wrap: pretty;
+		}
 
-        .button-container {
-            margin-top: 2rem;
+		.button-container {
+			margin-top: 2rem;
 
-            @media (max-width: 768px) {
-                flex-direction: column;
-            }
-            
-            a:last-of-type {
-                background: none;
-                border: 1px solid white;
-            }
-        }
+			@media (max-width: 768px) {
+				flex-direction: column;
+			}
 
-        @media (max-width: 768px) {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-    }
+			a:last-of-type {
+				background: none;
+				border: 1px solid white;
+			}
+		}
 
-    .quote {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -113px;
-        padding: 32px;
-        margin: 0 auto;
-        background: #F2EEE4;
-        box-shadow: 0px 22px 500px rgba(128, 128, 128, 0.04), 0px 9.19107px 208.888px rgba(128, 128, 128, 0.0287542), 0px 4.91399px 111.682px rgba(128, 128, 128, 0.0238443), 0px 2.75474px 62.6078px rgba(128, 128, 128, 0.02);
-        border-radius: 16px;
-        max-width: 768px;
-        
-        p {
-            font-family: 'Caveat';
-            font-size: 36px;
-            text-align: center;
-            color: #5F6952;
-            text-wrap: balanced;
-        }
+		@media (max-width: 768px) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
 
-        @media (max-width: 768px) {
-            padding: 16px;
-            width: 80%;
-            bottom: -64px;
-            
-            p {
-                font-size: 26px;
-            }
-        }
-    }
+	.quote {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -113px;
+		padding: 32px;
+		margin: 0 auto;
+		background: #f2eee4;
+		box-shadow:
+			0px 22px 500px rgba(128, 128, 128, 0.04),
+			0px 9.19107px 208.888px rgba(128, 128, 128, 0.0287542),
+			0px 4.91399px 111.682px rgba(128, 128, 128, 0.0238443),
+			0px 2.75474px 62.6078px rgba(128, 128, 128, 0.02);
+		border-radius: 16px;
+		max-width: 768px;
+
+		p {
+			font-family: "Caveat";
+			font-size: 36px;
+			text-align: center;
+			color: #5f6952;
+			text-wrap: balanced;
+		}
+
+		@media (max-width: 768px) {
+			padding: 16px;
+			width: 80%;
+			bottom: -64px;
+
+			p {
+				font-size: 26px;
+			}
+		}
+	}
+}
+
+.animation-shake {
+	animation: shake 0.7s ease-in-out;
+}
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%,
+	80% {
+		transform: translate3d(1px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-2px, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(2px, 0, 0);
+	}
 }
