@@ -1,0 +1,36 @@
+{
+	"slideshow": [
+			{
+				"url": "../images/image-1.webp",
+				"description": "En bild på en buffé"
+			},
+			{
+				"url": "../images/image-2.webp",
+				"description": "En bild på"
+			},
+			{
+				"url": "../images/image-3.webp",
+				"description": ""
+			}
+	],
+	"team": [
+		{
+			"name": "Hilja",
+			"description": "",
+			"avatar": "",
+			"contactDetails": {}
+		},
+		{
+			"name": "Hilja",
+			"description": "",
+			"avatar": "",
+			"contactDetails": {}
+		},
+		{
+			"name": "Hilja",
+			"description": "",
+			"avatar": "",
+			"contactDetails": {}
+		}
+	]
+}

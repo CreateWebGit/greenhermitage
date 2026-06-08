@@ -1,0 +1,40 @@
+input,
+textarea,
+select {
+	appearance: none;
+	width: 100%;
+	min-height: 2.625rem;
+	font-family: "Inter";
+	font-size: 1rem;
+	padding: 0 0.5rem;
+	border-radius: 0.5rem;
+	border: 1px solid #e3e3e3;
+	transition: border-color 0.2s ease;
+
+	&:focus {
+		border: 1px solid var(--color-green);
+		outline: none;
+	}
+}
+
+textarea {
+	resize: none;
+	height: 100%;
+	padding: 0.5rem;
+}
+
+.custom-component-input-container {
+	min-height: 2.625rem;
+	border-radius: 0.5rem;
+	border: 1px solid #e3e3e3;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: border-color 0.2s ease;
+	padding: 0 0.5rem;
+
+	&:hover {
+		border: 1px solid var(--color-green);
+	}
+}

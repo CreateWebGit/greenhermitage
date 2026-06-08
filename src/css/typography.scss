@@ -1,0 +1,128 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+h1,
+.h1 {
+	font-family: "Caveat";
+	font-size: 5.75rem;
+	font-weight: 400;
+	color: var(--color-green);
+	line-height: 0.85;
+
+	@media (max-width: 768px) {
+		font-size: 56px;
+	}
+}
+
+h2,
+.h2 {
+	font-family: "Caveat";
+	font-size: 4.75rem;
+	font-weight: 400;
+	color: var(--color-green);
+	line-height: 0.85;
+
+	@media (max-width: 768px) {
+		font-size: 56px;
+	}
+}
+
+h3,
+.h3 {
+	font-family: "Caveat";
+	font-size: 3rem;
+	font-weight: 400;
+	color: var(--color-green);
+	line-height: 0.85;
+
+	@media (max-width: 768px) {
+		font-size: 56px;
+	}
+}
+
+h4,
+.h4 {
+}
+
+h5,
+.h5 {
+}
+
+h6,
+.h6 {
+	font-size: 1.125rem;
+	letter-spacing: 0.32em;
+	font-weight: 600;
+	font-family: "Inter";
+	color: var(--color-dark-green);
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
+}
+
+p,
+.p {
+	font-size: 1.125rem;
+	font-family: "Inter";
+	font-weight: 450;
+	line-height: 1.5;
+	color: var(--color-dark-green);
+	letter-spacing: -0.02em;
+
+	&.body-text-line-height {
+		line-height: 1.75;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+a {
+	color: white;
+	text-decoration-color: transparent;
+	text-decoration-thickness: 2px;
+	transition: text-decoration 0.2s ease;
+	text-underline-offset: 4px;
+	font-family: "Inter";
+
+	&:hover {
+		text-decoration-color: var(--color-orange);
+	}
+
+	&.active {
+		text-decoration-color: var(--color-orange);
+	}
+}
+
+.text-green {
+	color: var(--color-green);
+}
+
+.text-beige {
+	color: var(--color-beige);
+}
+
+.text-orange {
+	color: var(--color-orange);
+}
+
+.text-dark-green {
+	color: var(--color-dark-green);
+}
+
+.text-white {
+	color: white;
+}
+
+.text-muted-white {
+	color: rgba(255, 255, 255, 0.5);
+}

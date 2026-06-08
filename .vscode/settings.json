@@ -1,0 +1,7 @@
+{
+    "workbench.editor.customLabels.enabled": true,
+    "workbench.editor.customLabels.patterns": {
+        "*/src/routes/dashboard/menu/+page.svelte": "Menu - Page",
+        "*/src/routes/dashboard/+layout.svelte": "App – Layout"
+    }
+}

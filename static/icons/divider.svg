@@ -1,0 +1,10 @@
+<svg width="78" height="17" viewBox="0 0 78 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.25">
+<rect x="69.4844" y="0.707107" width="11" height="11" transform="rotate(45 69.4844 0.707107)" stroke="#5F6952"/>
+<rect x="39.25" y="8.25" width="22.5" height="0.5" stroke="#5F6952" stroke-width="0.5"/>
+</g>
+<g opacity="0.25">
+<rect y="0.707107" width="11" height="11" transform="matrix(-0.707107 0.707107 0.707107 0.707107 7.98438 0.207107)" stroke="#5F6952"/>
+<rect x="-0.25" y="0.25" width="22.5" height="0.5" transform="matrix(-1 0 0 1 38.4707 8)" stroke="#5F6952" stroke-width="0.5"/>
+</g>
+</svg>
