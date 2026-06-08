@@ -86,7 +86,7 @@
 
 <section class="cw-section cw-grid py-4 pb-10">
 	<div class="cw-col-12 cw-col-xs-12 d-flex flex-column">
-		<h1 class="h2 text-center mt-2">t("Buffé meny", "Buffet menu")</h1>
+		<h1 class="h2 text-center mt-2">{t("Buffé meny", "Buffet menu")}</h1>
 		<img
 			class="mx-auto mt-1 mb-3"
 			src="/icons/divider.svg"
@@ -120,12 +120,13 @@
 					onclick={() => (currentMenuTab = "lunch")}
 					class="menu-tab"
 					class:active={currentMenuTab === "lunch"}
-					>Lunch buffé</button
+					>{t("Lunch buffé", "Lunch buffet")}</button
 				>
 				<button
 					onclick={() => (currentMenuTab = "dinner")}
 					class:active={currentMenuTab === "dinner"}
-					class="menu-tab">Middags buffé</button
+					class="menu-tab"
+					>{t("Middags buffé", "Dinner buffet")}</button
 				>
 			</div>
 		{/if}
