@@ -21,7 +21,10 @@
 		</div>
 		<div class="cw-col-4 cw-col-xs-12">
 			<p class="text-white mb-1">
-				{t("Hermitage Vegetariska Restaurang", "Hermitage Vegetarian Restaurant")}
+				{t(
+					"Hermitage Vegetariska Restaurang",
+					"Hermitage Vegetarian Restaurant",
+				)}
 			</p>
 			<p class="text-muted-white">St. Nygatan 11, Gamla Stan</p>
 			<p class="text-muted-white">111 27 Stockholm</p>
@@ -63,10 +66,13 @@
 		background-color: var(--color-green);
 		.footer-content {
 			max-width: 75rem;
-
 			margin: auto;
-
 			padding: 2rem;
+
+			@media (max-width: 768px) {
+				gap: 2rem;
+				padding: 4rem 2rem;
+			}
 		}
 
 		.text-white {

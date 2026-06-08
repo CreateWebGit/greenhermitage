@@ -7,6 +7,11 @@ section {
         padding-right: 2rem;
     }
 
+    @media (max-width: 768px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     &.full-width {
         max-width: unset;
         padding-left: calc(50vw - 1200px / 2);
@@ -302,6 +307,7 @@ section {
 
     @media (max-width: 768px) {
         gap: 0 !important;
+
     }
 
     .cw-col-6 {

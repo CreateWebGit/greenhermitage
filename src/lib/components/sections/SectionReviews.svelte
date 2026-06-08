@@ -131,7 +131,7 @@
 		<div class="cw-col-12 cw-col-xs-12">
 			<Divider marginTop="3" marginBottom="3" />
 			<div
-				class="button-container d-flex gap-1"
+				class="button-container links d-flex gap-1"
 				style="justify-content: center;"
 			>
 				<a href="/boka-bord" class="button primary">
@@ -345,6 +345,12 @@
 					transition-delay: 0.5s;
 				}
 			}
+		}
+	}
+
+	.links {
+		@media (max-width: 768px) {
+			flex-direction: column;
 		}
 	}
 </style>

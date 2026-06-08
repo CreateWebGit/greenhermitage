@@ -145,7 +145,7 @@
 />
 
 <section class="cw-section--all-reviews cw-grid py-5">
-	<div class="cw-col-12 cw-col-xs-12 d-flex flex-column">
+	<div class="cw-col-12 cw-col-xs-12 d-flex flex-column pt-xs-4">
 		<h1 class="h2 text-center">
 			{t("Vad våra gäster tycker...", "What our guests think...")}
 		</h1>
@@ -155,7 +155,7 @@
 			alt="divider icon"
 		/>
 	</div>
-	<div class="cw-col-8 cw-col-xs-12">
+	<div class="review-list-column cw-col-8 cw-col-xs-12">
 		<div class="reviews-container">
 			{#each reviews as review}
 				<div class="review-card">
@@ -186,7 +186,7 @@
 			{/each}
 		</div>
 	</div>
-	<div class="cw-col-4 cw-col-xs-12">
+	<div class="review-form-column cw-col-4 cw-col-xs-12">
 		<div class="review-form">
 			{#if success}
 				<p class="success">
@@ -265,6 +265,10 @@
 		gap: 1rem;
 		display: grid;
 		padding: 0 1rem;
+
+		@media (max-width: 768px) {
+			padding: 0;
+		}
 
 		.review-card {
 			border: 1px solid #5f69522b;
@@ -376,6 +380,22 @@
 					color: #1a7f37;
 				}
 			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.review-form-column {
+			order: 1;
+			margin-bottom: 1rem;
+
+			.review-form {
+				position: static;
+				height: auto;
+			}
+		}
+
+		.review-list-column {
+			order: 2;
 		}
 	}
 </style>

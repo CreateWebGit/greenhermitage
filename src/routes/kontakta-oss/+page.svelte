@@ -125,7 +125,7 @@
 <Header />
 <Hero
 	title={t("Kontakta oss", "Contact us")}
-	backgroundImage={"/images/none.webp"}
+	backgroundImage={"/images/header-meny.webp"}
 />
 
 <section class="cw-section--contact cw-grid py-8 py-xs-5 gap-1">

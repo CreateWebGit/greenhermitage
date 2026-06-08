@@ -243,6 +243,10 @@
 	.slider-container {
 		position: relative;
 
+		@media (max-width: 768px) {
+			margin: 0 1rem;
+		}
+
 		&::after {
 			content: "";
 			height: calc(50% + 1.5rem);

@@ -22,7 +22,12 @@
 </script>
 
 <svelte:head>
-	<title>{t("Boka bord | Green Hermitage", "Book a table | Green Hermitage")}</title>
+	<title
+		>{t(
+			"Boka bord | Green Hermitage",
+			"Book a table | Green Hermitage",
+		)}</title
+	>
 	<meta
 		name="description"
 		content={t(
@@ -34,7 +39,10 @@
 
 	<meta
 		property="og:title"
-		content={t("Boka bord | Green Hermitage", "Book a table | Green Hermitage")}
+		content={t(
+			"Boka bord | Green Hermitage",
+			"Book a table | Green Hermitage",
+		)}
 	/>
 	<meta
 		property="og:description"
@@ -50,7 +58,10 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta
 		name="twitter:title"
-		content={t("Boka bord | Green Hermitage", "Book a table | Green Hermitage")}
+		content={t(
+			"Boka bord | Green Hermitage",
+			"Book a table | Green Hermitage",
+		)}
 	/>
 	<meta
 		name="twitter:description"
@@ -82,6 +93,10 @@
 		height: 15.625rem;
 		margin-top: calc(-15.625rem / 2);
 		border-radius: 1rem;
+
+		@media (max-width: 768px) {
+			margin-bottom: 20rem;
+		}
 	}
 
 	.grid-col {
