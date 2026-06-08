@@ -86,7 +86,7 @@
 
 <section class="cw-section cw-grid py-4 pb-10">
 	<div class="cw-col-12 cw-col-xs-12 d-flex flex-column">
-		<h1 class="h2 text-center mt-2">Buffé meny</h1>
+		<h1 class="h2 text-center mt-2">t("Buffé meny", "Buffet menu")</h1>
 		<img
 			class="mx-auto mt-1 mb-3"
 			src="/icons/divider.svg"

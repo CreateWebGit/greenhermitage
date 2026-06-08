@@ -60,7 +60,7 @@
 			<a href="/boka-bord" class="button primary"
 				>{currentLanguage === "en" ? "Book a table" : "Boka bord"}</a
 			>
-			<a href="lunch-meny" class="button secondary white"
+			<a href="/buffe-meny" class="button secondary white"
 				>{currentLanguage === "en" ? "Our menu" : "Vår meny"}</a
 			>
 		</div>
