@@ -22,6 +22,11 @@
     }
 </script>
 
+<svelte:head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"/>
+</svelte:head>
+
 <svelte:window
     onkeydown={(event) => {
         if (event.key === 'Escape') closeSidebar()

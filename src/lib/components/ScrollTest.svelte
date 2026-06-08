@@ -50,5 +50,9 @@
   style="transform: rotate({$rotation}deg);"
   class="cw-col-img border-radius"
   src="/images/vegmeal.webp"
-  alt="dude rummaging through a planter"
+  alt="Vegetarisk måltid på Hermitage"
+  width="700"
+  height="700"
+  loading="lazy"
+  decoding="async"
 />

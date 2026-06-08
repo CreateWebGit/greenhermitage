@@ -27,6 +27,7 @@
 	<title>{metaTitle}</title>
 	<meta name="description" content={metaDescription} />
 	<link rel="canonical" href={canonicalUrl} />
+	<link rel="preload" as="image" href="/images/header-landing.webp" fetchpriority="high" />
 
 	<meta property="og:title" content={metaTitle} />
 	<meta property="og:description" content={metaDescription} />

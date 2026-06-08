@@ -17,7 +17,7 @@
 					lastScrollY = currentScrollY;
 				});
 			},
-			{ threshold: 1 }, // 20% visible triggers
+			{ threshold: 1 }, // Fully visible triggers
 		);
 
 		observer.observe(node);
@@ -32,24 +32,31 @@
 	$effect(() => {
 		currentLanguage = $language;
 	});
+
 </script>
 
-<section class="cw-section--hero full-width" style="background-image: none">
+<section class="cw-section--hero full-width">
 	<div class="content-container">
 		<a
 			href="https://www.google.com/search?sa=X&sca_esv=fc287096e33095a1&sxsrf=AE3TifOvywnKQLJjn6N56l-uc7JTR80qvA:1766961436215&q=Vegan-Vegetarian+Restaurant+Hermitage+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2M7W0NDYxNzE2NjA0MjY1NLEw3cDI-IpRNyw1PTEPRKaWJBZlJuYpBKUWlySWFiXmlSh4pBblZpYkpqcCBcsyU8uLF7GSph4AXct4N3oAAAA&rldimm=6599347433012351485&tbm=lcl&hl=en-SE&ved=2ahUKEwjc7_KlrOGRAxUoKxAIHWlPDcIQ9fQKegQIXxAG&biw=1694&bih=966&dpr=2#lkt=LocalPoiReviews"
 			target="_blank"
+			rel="noopener noreferrer"
 		>
 			<img
 				class="google-reviews mb-3"
 				src="/images/google-reviews.svg"
-				alt="hermitage logo"
+				alt="Google-recensioner"
+				width="209"
+				height="37"
 			/>
 		</a>
 		<img
 			class="logo mb-2"
 			src="/hermitage-logo-full.svg"
-			alt="hermitage logo"
+			alt="Hermitage"
+			width="508"
+			height="178"
+			fetchpriority="high"
 		/>
 		<p class="text-white text-center mb-4">
 			{currentLanguage === "en"
@@ -67,12 +74,23 @@
 	</div>
 
 	<video
-		src="/videos/hermitage-hero-video.mp4"
+		poster="/images/header-landing.webp"
+		preload="auto"
 		autoplay
 		playsinline
 		muted
 		loop
-	></video>
+	>
+		<source
+			src="/videos/hermitage-hero-mobile.mp4"
+			media="(max-width: 768px)"
+			type="video/mp4"
+		/>
+		<source
+			src="/videos/hermitage-hero-desktop.mp4"
+			type="video/mp4"
+		/>
+	</video>
 
 	<div class="quote-card" use:inView>
 		<!-- <p>Vi jobbar ständigt med att förbättra den planet vi lever på och jobbar i miljöns tecken. Därför är upp till <span class="text-orange">50% av våra rätter ekologiska.</span></p> -->

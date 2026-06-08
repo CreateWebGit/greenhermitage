@@ -90,13 +90,13 @@
 							onclick={prevReview}
 							aria-label="previous review slider button"
 						>
-							<i class="ph-bold ph-caret-left"></i>
+							<span aria-hidden="true">‹</span>
 						</button>
 						<button
 							onclick={nextReview}
 							aria-label="next review slider button"
 						>
-							<i class="ph-bold ph-caret-right"></i>
+							<span aria-hidden="true">›</span>
 						</button>
 					</div>
 				</div>
@@ -113,18 +113,18 @@
 		>
 			<div class="first-row">
 				<div class="image-1">
-					<img src={images[0]} />
+					<img src={images[0]} alt="" width="239" height="207" loading="lazy" decoding="async" />
 				</div>
 				<div class="image-2">
-					<img src={images[1]} />
+					<img src={images[1]} alt="" width="242" height="310" loading="lazy" decoding="async" />
 				</div>
 			</div>
 			<div class="second-row">
 				<div class="image-3">
-					<img src={images[2]} />
+					<img src={images[2]} alt="" width="242" height="310" loading="lazy" decoding="async" />
 				</div>
 				<div class="image-4">
-					<img src={images[3]} />
+					<img src={images[3]} alt="" width="239" height="207" loading="lazy" decoding="async" />
 				</div>
 			</div>
 		</div>

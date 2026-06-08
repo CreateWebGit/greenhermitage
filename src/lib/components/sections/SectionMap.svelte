@@ -36,6 +36,8 @@
       height="100%"
       width="100%"
       frameborder="0"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   </div>
 </section>

@@ -35,7 +35,11 @@
 		<img
 			class="cw-col-img border-radius"
 			src="/images/dude.webp"
-			alt="dude rummaging through a planter"
+			alt="Person som skördar färska råvaror"
+			width="1200"
+			height="700"
+			loading="lazy"
+			decoding="async"
 		/>
 	</div>
 </section>

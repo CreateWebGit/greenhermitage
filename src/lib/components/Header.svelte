@@ -107,7 +107,7 @@
 >
 	<div class="logo-container">
 		<a href="/">
-			<img src="/hermitage-logo-white.svg" alt="hermitage-logo" />
+			<img src="/hermitage-logo-white.svg" alt="Hermitage" width="179" height="64" />
 		</a>
 	</div>
 	<div class="nav-container">

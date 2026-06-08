@@ -16,7 +16,9 @@
 			<img
 				class="mb-2"
 				src="/hermitage-logo-white.svg"
-				alt="hermitage logotyp"
+				alt="Hermitage"
+				width="179"
+				height="64"
 			/>
 		</div>
 		<div class="cw-col-4 cw-col-xs-12">
