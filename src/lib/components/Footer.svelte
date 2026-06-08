@@ -45,7 +45,7 @@
 				<a href="/">{t("Välkommen", "Welcome")}</a>
 			</p>
 			<p class="text-muted-white">
-				<a href="/lunch-meny">{t("Vår meny", "Our menu")}</a>
+				<a href="/buffe-meny">{t("Vår meny", "Our menu")}</a>
 			</p>
 			<p class="text-muted-white">
 				<a href="/boka-bord">{t("Boka bord", "Book a table")}</a>
