@@ -500,7 +500,6 @@
 	<div class="cwcms-header-module-title">Buffémeny</div>
 	<div
 		class="cwcms-header-module-published"
-		style="margin-right: auto; margin-left: 0.5rem;"
 	>
 		<div class="input-container">
 			<label
@@ -517,7 +516,6 @@
 		</div>
 	</div>
 	<div class="cwcms-header-button-container">
-		<div class="line"></div>
 		<div class="save-buttons">
 			<button onclick={saveChanges} class="primary">Spara</button>
 		</div>
@@ -1047,5 +1045,15 @@
 	.category-tabs .tab-button.active {
 		background: var(--color-bg);
 		border-color: var(--color-border-strong, #333333);
+	}
+
+	@media (max-width: 600px) {
+		.category-localization-fields {
+			grid-template-columns: 1fr;
+		}
+
+		.category-tabs {
+			overflow-x: auto;
+		}
 	}
 </style>

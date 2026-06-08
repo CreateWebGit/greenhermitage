@@ -3,7 +3,8 @@
     z-index: 3;
 
     height: auto;
-    width: 400px;
+    width: min(400px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
 
     display: grid;
     grid-template-rows: 48px 1fr 48px;
@@ -34,6 +35,7 @@
         flex-direction: column;
         gap: 16px;
         background-color: var(--color-bg-secondary);
+        overflow-y: auto;
     }
 
     .cwcms-modal-footer {

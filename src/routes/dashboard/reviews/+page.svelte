@@ -108,9 +108,7 @@
     <div class="cwcms-header-module-title">
         Omdömen
     </div>
-    <div class="cwcms-header-module-published"></div>
     <div class="cwcms-header-button-container">
-        <div class="line"></div>
         <div class="save-buttons">
             {#if isDirty}
                 <button transition:fly={{y: 5}} class="secondary" onclick={cancelChanges}>Avbryt</button>

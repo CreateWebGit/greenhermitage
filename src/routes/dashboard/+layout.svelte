@@ -7,13 +7,50 @@
 
     overrideItemIdKeyNameBeforeInitialisingDndZones('_id')
 
+    let sidebarOpen = $state(false)
+
     onMount(() => {
         document.body.classList.add('cwcms-body')
+
+        return () => {
+            document.body.classList.remove('cwcms-body')
+        }
     })
+
+    const closeSidebar = () => {
+        sidebarOpen = false
+    }
 </script>
 
+<svelte:window
+    onkeydown={(event) => {
+        if (event.key === 'Escape') closeSidebar()
+    }}
+/>
+
 <div class="cwcms-layout">
-    <Sidebar/>
+    <button
+        type="button"
+        class="cwcms-mobile-menu-button"
+        aria-label="Öppna navigation"
+        aria-expanded={sidebarOpen}
+        onclick={() => sidebarOpen = true}
+    >
+        <i class="ph-bold ph-list"></i>
+    </button>
+
+    <div class:open={sidebarOpen} class="cwcms-sidebar-drawer">
+        <Sidebar onNavigate={closeSidebar} onClose={closeSidebar}/>
+    </div>
+
+    {#if sidebarOpen}
+        <button
+            type="button"
+            class="cwcms-sidebar-backdrop"
+            aria-label="Stäng navigation"
+            onclick={closeSidebar}
+        ></button>
+    {/if}
     <div class="cwcms-right-container">
         <slot/>
     </div>

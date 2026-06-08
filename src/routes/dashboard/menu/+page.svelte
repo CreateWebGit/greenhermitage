@@ -245,9 +245,8 @@
 </script>
 
 <div class="cwcms-header">
-	<div style="display: flex; height: 100%; align-items: center; gap: 12px;">
-		<div class="cwcms-header-module-title">Á la carte meny</div>
-		<div class="cwcms-header-module-published">
+	<div class="cwcms-header-module-title">Á la carte meny</div>
+	<div class="cwcms-header-module-published">
 			<div class="input-container">
 				<label
 					style="display: flex; align-items: center; gap: 6px;"
@@ -262,7 +261,6 @@
 					Publicerad
 				</label>
 			</div>
-		</div>
 	</div>
 	<div class="cwcms-header-button-container">
 		<div class="save-buttons">
@@ -272,7 +270,6 @@
 				class="secondary">Ny kategori</button
 			>
 		</div>
-		<div class="line"></div>
 		<div class="save-buttons">
 			{#if isDirty}
 				<button

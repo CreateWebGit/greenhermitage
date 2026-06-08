@@ -87,9 +87,7 @@
     <div class="cwcms-header-module-title">
         Bilder
     </div>
-    <div class="cwcms-header-module-published"></div>
     <div class="cwcms-header-button-container">
-        <div class="line"></div>
         <div class="save-buttons">
             {#if isDirty}
                 <!-- <button transition:fly={{y: 5}} class="secondary">Avbryt</button> -->
@@ -104,7 +102,7 @@
     {:else}
         <div class="input-container">
             <div class="input-label">Startsida bildslider (max 4 bilder)</div>
-            <div class="images-grid" style="display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: 12px;">
+            <div class="images-grid">
                 {#each Array(4) as _, i}
                     <div class="slot" style="border:1px dashed #ccc; border-radius:8px; aspect-ratio: 16/9; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#f9f9f9;">
                         {#if sliderImages[i]}
@@ -123,3 +121,21 @@
         </div>
     {/if}
 </div>
+
+
+<style>
+    .images-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    @media (max-width: 800px) {
+        .images-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 420px) {
+        .images-grid { grid-template-columns: 1fr; }
+    }
+</style>
