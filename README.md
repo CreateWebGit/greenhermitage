@@ -1,5 +1,3 @@
-MONGO_URI="mongodb+srv://emp:asdasd123@cluster0.l6w95s5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-UPLOADTHING_TOKEN='eyJhcGlLZXkiOiJza19saXZlXzRhNDQ0YzEyZjhhODQzNTVkNTkxOTlkNTgwZWUzNjBhNWJkMjUwMGE3YzNkMDhiM2E1YTg1Y2Y0MzU3N2E2N2UiLCJhcHBJZCI6IjgwZTRwemJuZjIiLCJyZWdpb25zIjpbInNlYTEiXX0='
 
 # sv
 
