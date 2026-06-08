@@ -44,6 +44,10 @@ section {
         padding-top: 128px;
     }
 
+    @media (min-width: 1920px) {
+        max-height: 67.5rem;
+    }
+
 
     video {
         position: absolute;
@@ -62,18 +66,6 @@ section {
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
         }
-    }
-
-
-    @media (min-width: 2560px) {
-        max-width: 2560px !important;
-        height: 75vh;
-        padding-left: calc(50vw - 2560px / 2) !important;
-        padding-right: calc(50vw - 2560px / 2) !important;
-
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        box-shadow: 0px 6.25rem 5rem rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 1.396rem 1.1168rem rgba(0, 0, 0, 0.0417275), 0px 0.7826rem 0.6261rem rgba(0, 0, 0, 0.035), 0px 0.4156rem 0.3325rem rgba(0, 0, 0, 0.0282725), 0px 0.173rem 0.1384rem rgba(0, 0, 0, 0.0196802);
     }
 
     .content-container {

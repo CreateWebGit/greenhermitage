@@ -12,6 +12,10 @@ header {
     transition: background-color 0.2s ease, transform 0.33s ease;
     background-color: var(--color-bg);
 
+    @media (max-width: 1264px) {
+        padding: 0 2rem;
+    }
+
     .logo-container {
         align-self: center;
 
