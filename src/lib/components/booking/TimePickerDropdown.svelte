@@ -4,30 +4,33 @@
 	import { language } from "$lib/stores/languageStore";
 
 	let currentLanguage = $state("sv");
+	let dropdownEl = $state();
 	const t = (sv, en) => (currentLanguage === "en" ? en : sv);
 
 	$effect(() => {
 		currentLanguage = $language;
 	});
 
-	//scroll single value into view
-	function scrollTimeValueIntoView(e) {
-		e.target.scrollIntoView();
+	function scrollTimeValueIntoView(option) {
+		const options = option.closest(".options");
+		if (!options) return;
+
+		const optionsRect = options.getBoundingClientRect();
+		const optionRect = option.getBoundingClientRect();
+		options.scrollTop +=
+			optionRect.top -
+			optionsRect.top -
+			(options.clientHeight - option.clientHeight) / 2;
 	}
 
 	onMount(() => {
-		//scroll both values into view
-		const selectedValues = document.querySelectorAll(".selected");
-
-		console.log(selectedValues);
-
-		selectedValues.forEach((selectedValue) => {
-			selectedValue.scrollIntoView();
-		});
+		dropdownEl
+			.querySelectorAll(".selected")
+			.forEach(scrollTimeValueIntoView);
 	});
 </script>
 
-<div class="dropdown">
+<div class="dropdown" bind:this={dropdownEl}>
 	<!-- hej hej -->
 	<div class="column">
 		<div class="title">{t("Timmar", "Hours")}</div>
@@ -42,7 +45,7 @@
 							...current,
 							time: { ...current.time, hour },
 						}));
-						scrollTimeValueIntoView(e);
+						scrollTimeValueIntoView(e.currentTarget);
 					}}
 				>
 					<span>{hour}</span>
@@ -63,7 +66,7 @@
 							...current,
 							time: { ...current.time, minute },
 						}));
-						scrollTimeValueIntoView(e);
+						scrollTimeValueIntoView(e.currentTarget);
 					}}
 				>
 					<span>{minute}</span>

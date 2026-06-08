@@ -53,7 +53,7 @@ export async function POST({ request }) {
         //admin mail
 		const { data: data2, error: error2 } = await resend.emails.send({
 			from: "Green Hermitage <onboarding@updates.createweb.se>",
-			to: "emil@createweb.se",
+			to: "aramavagian@yahoo.se",
 			subject: `${name} har bokat bord!`,
 			html: adminHtml,
 			text: adminText,

@@ -14,6 +14,7 @@
 	import Clock from "phosphor-svelte/lib/Clock";
 
 	let errors = $state({});
+	let hasBooked = $state(false);
 	let currentLanguage = $state("sv");
 	const t = (sv, en) => (currentLanguage === "en" ? en : sv);
 
@@ -74,8 +75,8 @@
 
 		const result = await response.json();
 
-		if (result.status === 200) {
-			console.log("has booked");
+		if (response.status === 200) {
+			hasBooked = true;
 		}
 
 		console.log("Response", result);
@@ -144,7 +145,11 @@
 		onclick={handleSubmit}
 		class="primary submit-button"
 	>
-		{#if Object.keys(errors).length > 0}
+		{#if hasBooked}
+			<span class="submit-title">
+				{t("Tack för din bokning", "Thank you for your booking")}
+			</span>
+		{:else if Object.keys(errors).length > 0}
 			<span class="submit-title">
 				{t("Dessa fält måste vara ifyllda", "These fields must be filled in")}
 			</span>
