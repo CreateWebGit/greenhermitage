@@ -1,8 +1,0 @@
-{
-  "console-ninja.toolsToEnableSupportAutomaticallyFor": {
-    "live-server-extension": true,
-    "live-preview-extension": true
-  },
-  "console-ninja.output.showLogsOnlyFromOpenedFiles": false,
-  "console-ninja.captureFunctions": true
-}
